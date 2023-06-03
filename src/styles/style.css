@@ -36,6 +36,12 @@
     display: block !important;
 }
 
+
+/*Simular Venda*/
+.form-control{
+    
+}
+
 @media screen and (max-width: 720px){
     .banner-desktop{
         display: none;
