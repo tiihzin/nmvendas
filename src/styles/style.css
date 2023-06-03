@@ -1,5 +1,13 @@
 
 .navbar1{
-    align-content: space-between;
-    gap: 50%;
+    height: 80px;
+    align-items: center;
+}
+
+.banner{
+    text-align: center;
+}
+
+@media screen and (max-width: 720px){
+    
 }
