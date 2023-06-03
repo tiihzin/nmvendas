@@ -10,9 +10,11 @@
     
     <!-- Estilos locais -->
     <link rel="stylesheet" href="src/styles/style.css">
+
+    <!-- Scripts locais -->
+    <script src="./src/scripts/regex.js"></script>
     <link rel="shortcut icon" href="src/Favicon.png" type="image/x-icon">
     <title>Norte Maquinas de Cartão</title>
-    <link rel="shortcut icon" href="./src/Favicon.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar -->
@@ -59,7 +61,7 @@
             <div class="row row-cols-2">
                 <div class="col">
                   <label for="form-control">R$</label>  
-                  <input class="form-control" id="form-control" type="number" placeholder="Default input" aria-label="default input example">
+                  <input class="form-control" id="form-control" type="number" placeholder="Default input" aria-label="default input example" oninput="validarInput(this)" oninput="formatarValor(this)">
                 </div>
                 <div class="col">
                     <select class="form-select" aria-label="Default select example">
