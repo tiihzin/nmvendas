@@ -9,8 +9,18 @@ function validarInput(input) {
 }
 
 function formatarValor(input) {
-    var valor = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-    var numeroFormatado = parseFloat(valor).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+      var valor = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+      var valorFormatado = '';
+      var contador = 0;
 
-    input.value = numeroFormatado;
-}
+      for (var i = valor.length - 1; i >= 0; i--) {
+        if (contador === 2) {
+          valorFormatado = '.' + valorFormatado;
+          contador = 0;
+        }
+        valorFormatado = valor[i] + valorFormatado;
+        contador++;
+      }
+
+      input.value = valorFormatado;
+    }
