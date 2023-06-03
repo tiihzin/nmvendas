@@ -7,6 +7,11 @@
 .navbar1, .container-header{
     background-color: #ffffff;
 }
+
+.logo-header{
+    height: 7vh;
+}
+
 .banner{
     display: flex;
     margin-top: 10vh;
