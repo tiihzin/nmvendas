@@ -60,11 +60,14 @@
         <div class="simular-venda container text-center">
             <div class="row row-cols-2">
                 <div class="col">
-                  <label for="form-control">R$</label>  
-                  <input aria-placeholder="R$ 00,00" class="form-control" id="form-control" type="number" placeholder="Default input" aria-label="default input example" oninput="validarInput(this)" oninput="formatarValor(this)">
+                    <label for="valorInput" class="form-label">Quanto você quer cobrar?</label>
+                    
+                    <input class="form-control" id="valorInput" type="number" placeholder="Default input" aria-label="default input example" oninput="validarInput(this)" oninput="formatarValor(this)">
                 </div>
                 <div class="col">
-                    <select class="form-select" aria-label="Default select example">
+                    <label for="maquininhaPagamento" class="form-label">Com o que você quer cobrar?</label>
+
+                    <select id="maquininhaPagamento" class="form-select" aria-label="Default select example">
                         <option selected>Open this select menu</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -72,19 +75,31 @@
                       </select>
                 </div>
                 <div class="col">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <label for="formaDePagamento" class="form-label">Como seus clientes vão te pagar?</label>
+
+                    <select class="form-select" aria-label="Default select example" id="formaDePagamento">
+                        <option selected>Método de pagamento</option>
+                        <option value="1">Crédito</option>
+                        <option value="2">Débito</option>
                       </select>
                 </div>
                 <div class="col">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <label for="dataRecebimentoDinheiro" class="form-label">Quando você quer receber o dinheiro?</label>
+
+                    <select class="form-select" aria-label="Default select example" id="dataRecebimentoDinheiro">
+                        <option selected>Número de parcelas</option>
+                        <option value="1">1 parecela</option>
+                        <option value="2">2 parecelas</option>
+                        <option value="3">3 parecelas</option>
+                        <option value="4">4 parecelas</option>
+                        <option value="5">5 parecelas</option>
+                        <option value="6">6 parecelas</option>
+                        <option value="7">7 parecelas</option>
+                        <option value="8">8 parecelas</option>
+                        <option value="9">9 parecelas</option>
+                        <option value="10">10 parecelas</option>
+                        <option value="11">11 parecelas</option>
+                        <option value="12">12 parecelas</option>
                       </select>
                 </div>
             </div>
