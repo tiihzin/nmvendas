@@ -21,6 +21,14 @@
     display: none;
 }
 
+.hiddem-desktop{
+    display: none !important; 
+}
+
+.hiddem-pocket{
+    display: block !important;
+}
+
 @media screen and (max-width: 720px){
     .banner-desktop{
         display: none;
@@ -28,8 +36,18 @@
     .banner-mobile{
         margin-top: 76px;
         display: block;
-        max-width: 320px;
+        max-width: 100vw;
     }
+
+    /*Responsividade*/
+    .hiddem-desktop{
+        display: block !important; 
+    }
+
+    .hiddem-pocket{
+        display: none !important;
+    }
+    
     .title-marca{
         display: none;
     }
