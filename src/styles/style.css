@@ -69,6 +69,14 @@
 .card_content_info_item{
     border-top: none;
 }
+
+/*Conteudo com as maquininhas*/
+.itens_maquininhas_carrousel{
+    width: 80%;
+    margin: auto;
+    background-color: #333;
+}
+
 input[type="text"]{
     padding-left: 35px;
 }
