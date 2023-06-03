@@ -1,6 +1,6 @@
 
 .navbar1{
-    height: 80px;
+    height: 10vh;
     align-items: center;
 }
 
@@ -9,20 +9,26 @@
 }
 .banner{
     display: flex;
+    margin-top: 10vh;
     align-items: center;
     justify-content: center;
 }
 
 .banner-desktop{
     display: block;
+    width: 94vw;
 }
 
 .banner-mobile{
     display: none;
 }
 
-.simular-venda{
-    
+.hiddem-desktop{
+    display: none !important; 
+}
+
+.hiddem-pocket{
+    display: block !important;
 }
 
 @media screen and (max-width: 720px){
@@ -30,10 +36,19 @@
         display: none;
     }
     .banner-mobile{
-        margin-top: 76px;
         display: block;
-        max-width: 320px;
+        width: 100vw;
     }
+
+    /*Responsividade*/
+    .hiddem-desktop{
+        display: block !important; 
+    }
+
+    .hiddem-pocket{
+        display: none !important;
+    }
+    
     .title-marca{
         display: none;
     }
