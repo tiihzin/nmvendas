@@ -38,6 +38,9 @@
 
 
 /*Simular Venda*/
+.simular-venda{
+    width: 60%;
+}
 .form-control{
     border: none;
     border-bottom: .5vh solid #39398f;
@@ -65,6 +68,10 @@ input[type="text"]{
     .banner-mobile{
         display: block;
         width: 100vw;
+    }
+    /*simular venda*/
+    .simular-venda{
+        width: 100%;
     }
 
     /*Responsividade*/
