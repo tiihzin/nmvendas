@@ -4,10 +4,36 @@
     align-items: center;
 }
 
+.navbar1, .container-header{
+    background-color: #ffffff;
+}
 .banner{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-desktop{
+    display: block;
+}
+
+.banner-mobile{
+    display: none;
 }
 
 @media screen and (max-width: 720px){
-    
+    .banner-desktop{
+        display: none;
+    }
+    *{
+        border: 1px solid;
+    }
+    .banner-mobile{
+        margin-top: 76px;
+        display: block;
+        max-width: 320px;
+    }
+    .title-marca{
+        display: none;
+    }
 }
