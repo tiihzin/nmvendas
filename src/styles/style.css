@@ -1,4 +1,6 @@
-
+:root{
+    --color_card_text: #0071D9;
+}
 .navbar1{
     height: 10vh;
     align-items: center;
@@ -57,6 +59,13 @@
     align-items: center;
 }
 
+/*Card*/
+.btn-mostrar_mais{
+    color: var(--color_card_text);
+}
+.card_content_info_item{
+    border-top: none;
+}
 input[type="text"]{
     padding-left: 35px;
 }
