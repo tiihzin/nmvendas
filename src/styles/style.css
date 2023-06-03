@@ -39,7 +39,8 @@
 
 /*Simular Venda*/
 .form-control{
-    
+    border: none;
+    border-bottom: .5vh solid #39398f;
 }
 
 @media screen and (max-width: 720px){
