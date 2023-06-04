@@ -6,25 +6,42 @@
     font-size: 1rem;
 }
 
+.simula-venda{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .row{
-    width: 40vh;
+    width: 50vh;
     height: 6vh;
     margin-top: 2vh;
 }
 
 .grid-formulario{
-    align-items: center;
-    width: 83vh;
+    align-items: start;
+    width: 103vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
-    gap: 3vh;
+    gap: 5vh;
 }
 
 select{
-    border: .5vh;
+    border: .3vh solid #ccc;
     border-radius: .375rem;
+    padding: .5vh 2vh;
 }
+
+select:disabled{
+    border: .3vh dashed #ccc;
+    background-color: #f7f7f7;
+}
+
+option{
+    margin: 2vh;
+}
+
 
 .form-content {
     margin-bottom: 10px;
@@ -41,7 +58,7 @@ select{
     border-radius: .375rem;
     display: inline-flex;
     align-items: center;
-    border-bottom: .5vh solid #ccc;
+    border: .1vh solid #ccc;
     transition: border-color 0.3s;
   }
   
@@ -50,6 +67,5 @@ select{
   }
 
   .input-valor.selected {
-    border-bottom: .5vh solid #54a454;
     box-shadow: 0px 2vh  6vh rgba(0, 0, 0, 0.1);
   }
