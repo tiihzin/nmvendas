@@ -101,36 +101,32 @@
         <!--Simular venda -->
         <div class="simular-venda container text-center">
             <div class="row row-cols-2">
-                <div class="col">
+                <div class="col quant-cobrar">
                     <label for="valorInput" class="form-label">Quanto você quer cobrar?</label>
                     
                     <input class="form-control" id="valorInput" type="number" placeholder="R$ 00,00" aria-label="default input example" oninput="validarInput(this)" oninput="formatarValor(this)">
                 </div>
-                <div class="col">
-                    <label for="maquininhaPagamento" class="form-label">Com o que você quer cobrar?</label>
+                <div class="col forma-cobrar">
+                    <label for="maq-pagamento" class="form-label">Com o que você quer cobrar?</label>
 
-                    <select id="maquininhaPagamento" class="form-select" aria-label="Default select example">
-                        <option selected>Escolha uma maquininha</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                    <select id="maq-pagamento" class="form-select" aria-label="Default select example">
+                        <option value="1" selected>Maquininhas Point e Point Tap</option>
+                        <option value="2">Código QR</option>
+                    </select>
                 </div>
-                <div class="col">
+                <div class="col forma-pagamento">
                     <label for="formaDePagamento" class="form-label">Como seus clientes vão te pagar?</label>
 
                     <select class="form-select" aria-label="Default select example" id="formaDePagamento">
-                        <option selected>Método de pagamento</option>
-                        <option value="1">Crédito</option>
+                        <option value="1" selected>Crédito</option>
                         <option value="2">Débito</option>
                       </select>
                 </div>
-                <div class="col">
+                <div class="col parcelas">
                     <label for="dataRecebimentoDinheiro" class="form-label">Quando você quer receber o dinheiro?</label>
 
                     <select class="form-select" aria-label="Default select example" id="dataRecebimentoDinheiro">
-                        <option selected>Número de parcelas</option>
-                        <option value="1">1 parecela</option>
+                        <option value="1" selected>1 parecela</option>
                         <option value="2">2 parecelas</option>
                         <option value="3">3 parecelas</option>
                         <option value="4">4 parecelas</option>
