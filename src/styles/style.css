@@ -81,7 +81,12 @@ top: -2px;
 .card_content_info_item{
     border-top: none;
 }
-
+.list-group-item{
+    border: none;
+}
+.btn-comprar{
+    margin: 0 10px;
+}
 /*Conteudo com as maquininhas*/
 .itens_maquininhas_carrousel{
     width: 90%;
