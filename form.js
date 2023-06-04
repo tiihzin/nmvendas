@@ -26,6 +26,9 @@ function divSelect(input) {
     // Adicionar vírgula antes dos dois últimos dígitos
     if (parteInteira.length <= 0) {
       parteInteira = '0';
+      ValorCobrar.value = '0,00';
+      display.innerHTML = '0,00';
+
     }
     
     var valorFormatado = parteInteira + ',' + parteDecimal;
