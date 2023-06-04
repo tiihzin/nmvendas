@@ -28,7 +28,6 @@ function formatarValor() {
     parteInteira = '0';
     ValorCobrar.value = '0,00';
     display.innerHTML = '0,00';
-
   }
   
   var valorFormatado = parteInteira + ',' + parteDecimal;
