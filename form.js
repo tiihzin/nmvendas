@@ -9,29 +9,28 @@ function divSelect(input) {
     }
   }
 
-  function validarInput(input) {
-  var regex = /^\d+(\.\d{1,2})?$/; // Expressão regular para um valor monetário válido
 
-  if (!regex.test(input.value)) {
-  input.setCustomValidity("Digite um valor monetário válido!");
-  } else {
-  input.setCustomValidity("");
-  }
-}
-
-function formatarValor(input) {
-  var valor = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-  var valorFormatado = '';
-  var contador = 0;
-
-  for (var i = valor.length - 1; i >= 0; i--) {
-      if (contador === 2) {
-      valorFormatado = '.' + valorFormatado;
-      contador = 0;
-      }
-      valorFormatado = valor[i] + valorFormatado;
-      contador++;
-  }
-
-  input.value = valorFormatado;
+  function formatarValor() {
+    var display = document.querySelector("#valor-vende");
+    var inputValorCobrar = document.querySelector("#valor-cobrar");
+    var valor = inputValorCobrar.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    
+    // Remover zeros à esquerda
+    valor = valor.replace(/^0+/, '');
+    
+    // Adicionar ponto a cada três dígitos da parte inteira
+    var parteInteira = valor.slice(0, -2);
+    var parteDecimal = valor.slice(-2);
+    parteInteira = parteInteira.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    
+    // Adicionar vírgula antes dos dois últimos dígitos
+    if (parteInteira.length <= 0) {
+      parteInteira = '0';
+    }
+    
+    var valorFormatado = parteInteira + ',' + parteDecimal;
+    display.innerHTML = valorFormatado;
+    
+    // Atualizar o valor no input formatado
+    inputValorCobrar.value = valorFormatado;
   }
