@@ -39,3 +39,5 @@ function formatarValor() {
   // Atualizar o valor no input formatado
   ValorCobrar.value = valorFormatado;
 }
+
+

@@ -163,8 +163,6 @@ option {
 
 .display-valores{
     border-radius: .375rem;
-    border: .3vh #ccc solid;
-    padding: 1vh 2vh;
     display: grid;
     height: 100%;
     width: 55vh;
@@ -201,7 +199,7 @@ input[type="text"]{
     padding-left: 35px;
 }
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 800px){
     .banner-desktop{
         display: none;
     }
