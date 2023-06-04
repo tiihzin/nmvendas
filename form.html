@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="form.css">
+    <script src="form.js"></script>
     <title>Document</title>
+
+    
 </head>
 <body>
     <!-- <div class="simular-venda container">
@@ -60,15 +63,22 @@
 
         </div> -->
 
-        <section>
-            <div class="form-content">
-                <label for="#valor-cobrar">Quanto você que cobrar?</label>    
-                <div class="input-valor">
-                    <span class="cifrao">R$ </span>
-                    <input aria-label="AmountField" type="text" inputmode="decimal" aria-describedby="AmountField-prefix" value="0,00" id="valor-cobrar"></input>
-                </div>
+    <div class="grid-formulario">
+        <div class="form-content col">
+            <span>Quanto você quer cobrar?</span>
+            <div class="input-valor row">
+                <span class="cifrao">R$</span>
+                <input aria-label="AmountField" type="text" inputmode="decimal" aria-describedby="AmountField-prefix" placeholder="0,00" id="valor-cobrar" onfocus="divSelect(this)" onblur="divSelect(this)" onblur="validarInput(this)" onblur="formatarValor(this)">
             </div>
-        </section>
+        </div>
+        <div class="maqui-pagamemto col">
+            <span>Com o que você quer cobrar?</span>
+            <select id="como-cobrar" class="row">
+                <option value="1" selected>Maquininhas Point e Point Tap</option>
+                <option value="2">Código QR</option>
+            </select>
+
+        </div>
     </div>
 </body>
 </html>
