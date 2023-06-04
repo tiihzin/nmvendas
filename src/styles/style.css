@@ -123,4 +123,8 @@ input[type="text"]{
     .title-marca{
         display: none;
     }
+    /*card*/
+    .card-col{
+        flex-direction: column;
+    }
 }
