@@ -10,20 +10,22 @@
 .simula-venda{
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
 .row{
     width: 50vh;
-    height: 6vh;
+    height: 8vh;
     margin-top: 2vh;
 }
 
 .grid-formulario{
-    align-items: start;
+    align-items: end;
     width: 103vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 71fr;
     justify-items: center;
     gap: 5vh;
 }
@@ -31,8 +33,12 @@
 select{
     border: .3vh solid #ccc;
     border-radius: .375rem;
-    padding: .5vh 2vh;
+    padding: 2vh;
     cursor: pointer;
+}
+
+select:focus{
+    border: #4390C2 .3vh solid;
 }
 
 select:disabled{
@@ -40,15 +46,12 @@ select:disabled{
     background-color: #f7f7f7;
 }
 
-option{
-    margin: 2vh;
-}
+option {
+    background: #fff;
+    color: #1d1d1d;
+    margin: 0.2vh 0;
+    }
 
-
-.form-content {
-    margin-bottom: 10px;
-    
-  }
 
 .col{
     display: flex;
@@ -66,7 +69,6 @@ option{
 }
   
 .input-valor.selected {
-    
     border-bottom: #4390C2 solid;
     
 }
@@ -77,33 +79,40 @@ option{
     font-weight: 300;
 }
 
+#valor-cobrar::placeholder{
+    color: #1d1d1d;
+}
+
 .cifrao{
     font-size: 1.3rem;
     font-weight: 300;
 }
 
 .display-valores{
+    border-radius: .375rem;
+    border: .3vh #ccc solid;
+    padding: 1vh 2vh;
     display: grid;
     height: 100%;
-    width: 100%;
-    font-size: 1.2rem;
-    grid-template-rows: 1fr 1fr;
-    align-items: start;
+    width: 50vh;
+    font-size: 1rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
     justify-content: start;
 
 }
 
 .vende{
-    margin-left: 1vh;
+    font-size: 1.2rem;
 }
 
 .valor{
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .content-valores{
     display: flex;
-    align-items: flex-end;
-    flex-direction: row;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
