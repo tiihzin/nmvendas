@@ -60,16 +60,17 @@
     justify-content: center;
 }
 
-.row{
-    width: 50vh;
+.linha{
+    width: 55vh;
     height: 8vh;
     margin-top: 2vh;
     flex-wrap:nowrap
 }
 
 .grid-formulario{
+    --bs-gutter-x: 0rem;
     align-items: end;
-    width: 103vh;
+    width: 113vh;
     display: grid;
     grid-template-columns: 1fr 71fr;
     justify-items: center;
@@ -143,7 +144,7 @@ option {
     padding: 1vh 2vh;
     display: grid;
     height: 100%;
-    width: 50vh;
+    width: 55vh;
     font-size: 1rem;
     grid-template-columns: 1fr 1fr;
     align-items: center;

@@ -103,9 +103,9 @@
         <section class="simula-venda">
           <h1>Simule sua venda Aqui</h1>
           <div class="grid-formulario">
-              <div class="form-content col">
+              <div class="form-content col" >
                   <span>Quanto você quer cobrar?</span>
-                  <div class="input-valor row">
+                  <div class="input-valor linha" style=" --bs-glutter-x: 0rem;">
                       <span class="cifrao">R$</span>
                       <input aria-label="AmountField" type="text" inputmode="decimal" aria-describedby="AmountField-prefix" placeholder="0,00" id="valor-cobrar" onfocus="divSelect(this)" onblur="divSelect(this)" oninput="formatarValor()">
                   </div>
@@ -123,14 +123,14 @@
               </div>
               <div class="content-como-cobrar col">
                   <span>Com o que você quer cobrar?</span>
-                  <select id="como-cobrar" class="row">
+                  <select id="como-cobrar" class="linha" style=" --bs-glutter-x: .0rem;">
                       <option selected value="1" >Maquininhas Point e Point Tap</option>
                       <option value="2">Código QR</option>
                   </select>
               </div>
               <div class="content-tipo-pagamento col">
                   <span>Como seus cliente vão pagar?</span>
-                  <select id="tipo-pagamento" class="row">
+                  <select id="tipo-pagamento" class="linha" style=" --bs-glutter-x: .0rem;">
                       <option selected value="1" >Débito</option>
                       <option value="2">Crédito</option>
                       <option value="3">Vai Pix</option>
@@ -138,7 +138,7 @@
               </div>
               <div class="content-quando-recebe col">
                   <span>Quando você quer receber o dinheiro?</span>
-                  <select id="quando-recebe" class="row">
+                  <select id="quando-recebe" class="linha" style=" --bs-glutter-x: .0rem;">
                       <option selected value="1" >Na hora</option>
                       <option value="2">14 dias</option>
                       <option value="3">30 dias</option>
@@ -146,7 +146,7 @@
               </div>
               <div class="content-tipo-parcelas col">
                   <span>Que tipo de pagamento você quer oferecer?</span>
-                  <select id="tipo-parcelas" disabled class="row">
+                  <select id="tipo-parcelas" disabled class="linha" style=" --bs-glutter-x: .0rem;">
                       <option selected value="1" >À vista</option>
                       <option value="2">Parcelado Comprador</option>
                       <option value="3">Parcelado Vendedor</option>
