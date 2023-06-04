@@ -12,8 +12,8 @@ function divSelect(input) {
 
   function formatarValor() {
     var display = document.querySelector("#valor-vende");
-    var inputValorCobrar = document.querySelector("#valor-cobrar");
-    var valor = inputValorCobrar.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    var ValorCobrar = document.querySelector("#valor-cobrar");
+    var valor = ValorCobrar.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
     
     // Remover zeros à esquerda
     valor = valor.replace(/^0+/, '');
@@ -29,8 +29,11 @@ function divSelect(input) {
     }
     
     var valorFormatado = parteInteira + ',' + parteDecimal;
-    display.innerHTML = valorFormatado;
+
+    if (parteInteira != '0'){
+        display.innerHTML = valorFormatado;
+    }
     
     // Atualizar o valor no input formatado
-    inputValorCobrar.value = valorFormatado;
+    ValorCobrar.value = valorFormatado;
   }
