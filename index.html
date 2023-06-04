@@ -104,7 +104,14 @@
                 <div class="col quant-cobrar">
                     <label for="valorInput" class="form-label">Quanto você quer cobrar?</label>
                     
-                    <input class="form-control" id="valorInput" type="number" placeholder="R$ 00,00" aria-label="default input example" oninput="validarInput(this)" oninput="formatarValor(this)">
+                    <div class="valor-content">
+                      <span class="cifrao">R$</span>
+                      <input class="form-control" id="form-control" aria-label="AmountField" type="text" inputmode="decimal" aria-describedby="AmountField-prefix" value="0,00" onblur="validarInput(this)" onblur="formatarValor(this)">
+
+                      
+                    </div>
+
+
                 </div>
                 <div class="col forma-cobrar">
                     <label for="maq-pagamento" class="form-label">Com o que você quer cobrar?</label>
