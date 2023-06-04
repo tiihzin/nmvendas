@@ -16,7 +16,7 @@
 }
 
 body{
-    width: 100vw;
+    width: 100%;
 }
 
 section{
@@ -85,7 +85,7 @@ h1{
 
 .grid-formulario{
     align-items: end;
-    width: 113vh;
+    width: 120vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
@@ -97,6 +97,10 @@ select{
     border-radius: .375rem;
     padding: 2vh;
     cursor: pointer;
+}
+
+select:hover{
+    border: .3vh solid #c4d4ff;
 }
 
 select:focus{
@@ -135,8 +139,12 @@ option {
     
 }
 
+.input-valor:hover:not(.selected){
+    border-bottom: #c4d4ff solid;
+}
+
 #valor-cobrar{
-    width: 28vh;
+    width: 40vh;
     padding-left: 0vh;
     font-size: 1.3rem;
     font-weight: 300;
