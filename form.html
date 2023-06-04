@@ -5,70 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="form.css">
-    <script src="form.js"></script>
+    
     <title>Document</title>
 
     
 </head>
 <body>
-    <!-- <div class="simular-venda container">
-        <div class="row row-cols-2">
-            <div class="col quant-cobrar">
-                <label for="valorInput" class="form-label">Quanto você quer cobrar?</label>
-                
-                <div class="valor-content">
-                  <span class="cifrao">R$</span>
-                  <input class="form-control" id="form-control" aria-label="AmountField" type="text" inputmode="decimal" aria-describedby="AmountField-prefix" value="0,00" onblur="validarInput(this)" onblur="formatarValor(this)">
-
-                  
-                </div>
-
-
-            </div>
-            <div class="col forma-cobrar">
-                <label for="maq-pagamento" class="form-label">Com o que você quer cobrar?</label>
-
-                <select id="maq-pagamento" class="form-select" aria-label="Default select example">
-                    <option value="1" selected>Maquininhas Point e Point Tap</option>
-                    <option value="2">Código QR</option>
-                </select>
-            </div>
-            <div class="col forma-pagamento">
-                <label for="formaDePagamento" class="form-label">Como seus clientes vão te pagar?</label>
-
-                <select class="form-select" aria-label="Default select example" id="formaDePagamento">
-                    <option value="1" selected>Crédito</option>
-                    <option value="2">Débito</option>
-                  </select>
-            </div>
-            <div class="col parcelas">
-                <label for="dataRecebimentoDinheiro" class="form-label">Quando você quer receber o dinheiro?</label>
-
-                <select class="form-select" aria-label="Default select example" id="dataRecebimentoDinheiro">
-                    <option value="1" selected>Na hora</option>
-                    <option value="2">14 dias</option>
-                    <option value="3">30 dias</option>
-                  </select>
-            </div>
-
-            <div class="col parcelas">
-              <label for="dataRecebimentoDinheiro" class="form-label">Que tipo de pagamento você quer oferecer?</label>
-
-              <select class="form-select" aria-label="Default select example" id="dataRecebimentoDinheiro">
-                  <option value="1" selected>À vista</option>
-                  <option value="2">Parcelado Comprador</option>
-                  <option value="3">Parcelado Vendedor</option>
-              </select>
-          </div>
-
-        </div> -->
 <section class="simula-venda">
     <div class="grid-formulario">
         <div class="form-content col">
             <span>Quanto você quer cobrar?</span>
             <div class="input-valor row">
                 <span class="cifrao">R$</span>
-                <input aria-label="AmountField" type="text" inputmode="decimal" aria-describedby="AmountField-prefix" placeholder="0,00" id="valor-cobrar" onfocus="divSelect(this)" onblur="divSelect(this)" onblur="validarInput(this)" onblur="formatarValor(this)">
+                <input aria-label="AmountField" type="text" inputmode="decimal" aria-describedby="AmountField-prefix" placeholder="0,00" id="valor-cobrar" onfocus="divSelect(this)" onblur="divSelect(this)" oninput="formatarValor()">
+            </div>
+        </div>
+
+        <div class="display-valores">
+            <div class="vende">
+                <span class="vendepor">Se vender por</span>
+                <span>R$ <b id="valor-vende">00,00</b></span>
             </div>
         </div>
         <div class="content-como-cobrar col">
@@ -102,7 +58,10 @@
                 <option value="3">Parcelado Vendedor</option>
             </select>
         </div>
+
+        
     </div>
 </section>
+<script src="form.js"></script>
 </body>
 </html>

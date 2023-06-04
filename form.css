@@ -55,7 +55,9 @@ option{
 }
   
 .input-valor {
-    padding: .1vh 2vh;
+    padding: 1vh 2vh;
+    height: 7vh;
+    font-size: 1.5rem !important;
     display: inline-flex;
     align-items: center;
     border-radius: .375rem;
@@ -64,11 +66,18 @@ option{
 }
   
 .input-valor.selected {
-    box-shadow: 0px 2vh  6vh rgba(0, 0, 0, 0.1);
-    border-bottom: #636dfd solid;
+    box-shadow: 0px 2vh 4vh rgba(0, 0, 0, 0.1);;
+    border-bottom: #4390C2 solid;
     
 }
 
 #valor-cobrar{
     width: 28vh;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.cifrao{
+    font-size: 1.3rem;
+    font-weight: 300;
 }
