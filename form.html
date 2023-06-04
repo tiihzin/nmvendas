@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="simular-venda container text-center">
+    <!-- <div class="simular-venda container">
         <div class="row row-cols-2">
             <div class="col quant-cobrar">
                 <label for="valorInput" class="form-label">Quanto você quer cobrar?</label>
@@ -57,7 +58,17 @@
               </select>
           </div>
 
-        </div>
+        </div> -->
+
+        <section>
+            <div class="form-content">
+                <label for="#valor-cobrar">Quanto você que cobrar?</label>    
+                <div class="input-valor">
+                    <span class="cifrao">R$ </span>
+                    <input aria-label="AmountField" type="text" inputmode="decimal" aria-describedby="AmountField-prefix" value="0,00" id="valor-cobrar"></input>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
