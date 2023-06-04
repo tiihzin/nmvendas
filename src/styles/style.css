@@ -1,6 +1,16 @@
 :root{
     --color_card_text: #0071D9;
 }
+
+*{
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
 .navbar1{
     height: 10vh;
     align-items: center;
@@ -40,53 +50,120 @@
 
 
 /*Simular Venda*/
-.simular-venda{
-    width: 60%;
-}
-.form-control{
-    border: none;
-    border-bottom: .5vh solid #39398f;
-}
-
-.form-control:focus{
-    box-shadow: 0px 2vh  6vh rgba(0, 0, 0, 0.1);
-}
-
-.valor-content{
+.simula-venda{
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.row{
+    width: 50vh;
+    height: 8vh;
+    margin-top: 2vh;
+    flex-wrap:nowrap
+}
+
+.grid-formulario{
+    align-items: end;
+    width: 103vh;
+    display: grid;
+    grid-template-columns: 1fr 71fr;
+    justify-items: center;
+    gap: 5vh;
+}
+
+select{
+    border: .3vh solid #ccc;
+    border-radius: .375rem;
+    padding: 2vh;
+    cursor: pointer;
+}
+
+select:focus{
+    border: #4390C2 .3vh solid;
+}
+
+select:disabled{
+    border: .3vh dashed #ccc;
+    background-color: #f7f7f7;
+}
+
+option {
+    background: #fff;
+    color: #1d1d1d;
+    margin: 0.2vh 0;
+    }
+
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+  
+.input-valor {
+    padding: 1vh 2vh;
+    height: 7vh;
+    font-size: 1.5rem !important;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: .5vh #ccc solid;
+    
+}
+  
+.input-valor.selected {
+    border-bottom: #4390C2 solid;
+    
+}
+
+#valor-cobrar{
+    width: 28vh;
+    padding-left: 0vh;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+#valor-cobrar::placeholder{
+    color: #1d1d1d;
 }
 
 .cifrao{
-position: relative;
-left: 31px;
-top: -2px;
+    width: auto;
+    font-size: 1.3rem;
+    padding-left: 0;
+    font-weight: 300;
 }
 
-.label-form{
-    position: absolute;
-    margin-left: 15px;
-}
-
-.form{
-    display: flex;
+.display-valores{
+    border-radius: .375rem;
+    border: .3vh #ccc solid;
+    padding: 1vh 2vh;
+    display: grid;
+    height: 100%;
+    width: 50vh;
+    font-size: 1rem;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
+    justify-content: start;
+
 }
 
-/*Card*/
-.btn-mostrar_mais{
-    color: var(--color_card_text);
+.vende{
+    font-size: 1.2rem;
 }
-.card_content_info_item{
-    border-top: none;
+
+.valor{
+    font-weight: 700;
 }
-.list-group-item{
-    border: none;
+
+.content-valores{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 }
-.btn-comprar{
-    margin: 0 10px;
-}
+
+
 /*Conteudo com as maquininhas*/
 .itens_maquininhas_carrousel{
     width: 90%;
