@@ -17,7 +17,12 @@ pocket.addEventListener('click', () => {
 for ( i = 0; i < 3; i++) {
   links[i].addEventListener('click', () => {
     navLinks.classList.remove('hide');
-    dark.classList.remove('hiddem');
+    dark.classList.add('hiddem');
+    if (navLinks.classList.contains('hide')) {
+      pocketimg.src = "src/header/Close.svg";
+    } else {
+      pocketimg.src = "src/header/HambugerMenu.svg"
+    }
   });
 }
 
