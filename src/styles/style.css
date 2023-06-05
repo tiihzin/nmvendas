@@ -50,7 +50,8 @@ h4{
 }
 
 .navbar1{
-    height: 10vh;
+    height: 5rem;
+    padding: 0rem 1rem;
     align-items: center;
 }
 
@@ -59,7 +60,7 @@ h4{
 }
 
 .logo-header{
-    height: 7vh;
+    height: 3rem;
 }
 
 .banner{
