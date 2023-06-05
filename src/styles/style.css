@@ -275,6 +275,13 @@ option {
         justify-content: start;
     
     }
+
+    .linha{
+        width: 70vw;
+        height: 8vh;
+        margin-top: 2vh;
+        flex-wrap:nowrap
+    }
     
 
     /*Cartões*/
