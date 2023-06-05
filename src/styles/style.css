@@ -90,7 +90,7 @@ h4{
     font-weight: 400;
 }
 
-.menu-nav{
+.menu,.menu-nav{
     display: flex;
     gap: 1rem;
 }
@@ -106,6 +106,7 @@ h4{
 
 .hiddem{
     display: none;
+    
 }
 
 
@@ -118,27 +119,75 @@ h4{
     left: 0;
 }
 
+.redes-sociais{
+    display: flex;
+    gap: .5rem;
+    
+}
+
+.content-redes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: #1d1d1d;
+}
+
+.content-redes img{
+    width: 1rem;
+}
+.face{
+    align-items: end;
+}
+
+.face img{
+    width: .8rem;
+}
+
 .menu-link:hover{
     color: var(--color_hover);
 }
 
 @media screen and (max-width: 800px){
-    .menu-nav{
+    .menu-pocket{
+        z-index: 3;
+    }
+    
+    .menu{
         min-width: 40%;
         height: 100vh;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         top: 0;
         align-items: end;
         position: absolute;
         right: -40rem;
         z-index: 2;
-        font-size: 1.2rem;
         box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
         background-color: var(--color_gray);
         padding: 2rem;
+        padding-top: 5rem;
         transition: all 100ms ease-in;
     }
+
+    .menu-nav{
+        flex-direction: column;
+        font-size: 1.2rem;
+        align-items: end;
+    }
+
+    .nav-donw{
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav-donw h4{
+        margin-bottom: .5rem;
+    }
+
 }
 
 .navbar1, .container-header{
