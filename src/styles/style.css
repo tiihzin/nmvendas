@@ -99,14 +99,20 @@ h4{
     right: 0rem !important;
 }
 
+.close{
+    position: absolute;
+    top: 1.7rem;
+}
+
 .hiddem{
     display: none;
 }
 
+
 .darkness-body{
     width: 100vw;
     height: 100vh;
-    background-color: #1d1d1d52;
+    background-color: #1d1d1d7e;
     position: absolute;
     top: 0;
     left: 0;
