@@ -7,6 +7,7 @@
     --color_gray: #f7f7f7;
     --color_border: #ccc;
     --color_border_hover: #c4d4ff;
+    --color_hover: #165a99;
     --color_subtitle: #797979;
     --color_black: #1d1d1d;
 }
@@ -18,6 +19,8 @@
     border: none;
     font-weight: 400;
     color: var(--color_black);
+    text-decoration: none;
+    transition: all 10ms ease-in;
     font-family: 'Poppins', sans-serif;
     
 }
@@ -75,7 +78,7 @@ h4{
     justify-content: space-between;
 }
 
-.content-left{
+.content-logo{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -85,6 +88,51 @@ h4{
 .title-header{
     font-size: 1.2rem;
     font-weight: 400;
+}
+
+.menu-nav{
+    display: flex;
+    gap: 1rem;
+}
+
+.hide{
+    right: 0rem !important;
+}
+
+.hiddem{
+    display: none;
+}
+
+.darkness-body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #1d1d1d52;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu-link:hover{
+    color: var(--color_hover);
+}
+
+@media screen and (max-width: 800px){
+    .menu-nav{
+        min-width: 35%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        top: 0;
+        align-items: end;
+        position: absolute;
+        right: -40rem;
+        z-index: 2;
+        font-size: 1rem;
+        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
+        background-color: var(--color_gray);
+        padding: 2rem;
+        transition: all 100ms ease-in;
+    }
 }
 
 .navbar1, .container-header{
