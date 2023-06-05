@@ -115,6 +115,7 @@ h4{
 
 select{
     border: .10rem solid #ccc;
+    background-color: #fff;
     border-radius: .375rem;
     padding: 2vh;
     cursor: pointer;
