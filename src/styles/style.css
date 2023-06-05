@@ -257,12 +257,25 @@ option {
     /*simular venda*/
     .grid-formulario{
         align-items: end;
-        width: auto;
+        width: 70vw;
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
         gap: 5vh;
     }
+
+    .display-valores{
+        border-radius: .375rem;
+        display: grid;
+        height: 100%;
+        width: 70vw;
+        font-size: 1rem;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: start;
+    
+    }
+    
 
     /*Cartões*/
     .cartoes-grid-hiddem-desktop{
