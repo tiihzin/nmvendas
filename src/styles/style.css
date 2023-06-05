@@ -257,7 +257,7 @@ option {
     /*simular venda*/
     .grid-formulario{
         align-items: end;
-        width: 70vw;
+        width: 80vw;
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
@@ -268,7 +268,7 @@ option {
         border-radius: .375rem;
         display: grid;
         height: 100%;
-        width: 70vw;
+        width: 80vw;
         font-size: 1rem;
         grid-template-columns: 1fr 1fr;
         align-items: center;
@@ -277,7 +277,7 @@ option {
     }
 
     .linha{
-        width: 70vw;
+        width: 80vw;
         height: 8vh;
         margin-top: 2vh;
         flex-wrap:nowrap
