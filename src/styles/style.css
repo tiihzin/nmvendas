@@ -114,22 +114,22 @@ h4{
 }
 
 select{
-    border: .3vh solid #ccc;
+    border: .10rem solid #ccc;
     border-radius: .375rem;
     padding: 2vh;
     cursor: pointer;
 }
 
 select:hover{
-    border: .3vh solid #c4d4ff;
+    border: .10rem solid #c4d4ff;
 }
 
 select:focus{
-    border: #4390C2 .3vh solid;
+    border: #4390C2 .10rem solid;
 }
 
 select:disabled{
-    border: .3vh dashed #ccc;
+    border: .10rem dashed #ccc;
     background-color: #f7f7f7;
 }
 
@@ -151,7 +151,7 @@ option {
     font-size: 1.5rem !important;
     display: inline-flex;
     align-items: center;
-    border-bottom: .5vh #ccc solid;
+    border-bottom: .20rem #ccc solid;
     
 }
   
@@ -237,7 +237,7 @@ option {
     align-items: center;
     width: 8vh;
     background-color: #fff;
-    border: #ccc .3vh solid;
+    border: #ccc .10rem solid;
     border-radius: .375rem;
     padding: .5vh;
 }
