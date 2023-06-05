@@ -220,11 +220,11 @@ option {
 .cartoes-grid-hiddem-pocket{
   display: flex;
   flex-wrap: wrap;
-  max-width: 33.8rem;
+  max-width: 44rem;
   margin-top: 4vh;
   column-count: 8;
   justify-content: center;
-  gap: .8rem;
+  gap: 1rem;
 }
 
 .cartoes-grid-hiddem-desktop{
@@ -235,7 +235,7 @@ option {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3.5rem;
+    width: 4.5rem;
     background-color: #fff;
     border: #ccc .10rem solid;
     border-radius: .375rem;
@@ -243,7 +243,7 @@ option {
 }
 
 .bandeira-content img{
-    width: 7vh;
+    width: 4rem;
 }
 
 @media screen and (max-width: 800px){
@@ -299,6 +299,21 @@ option {
 
     .cartoes-grid-hiddem-pocket{
         display: none;
+    }
+
+    .bandeira-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.5rem;
+        background-color: #fff;
+        border: #ccc .10rem solid;
+        border-radius: .375rem;
+        padding: .5vh;
+    }
+
+    .bandeira-content img{
+        width: 3rem;
     }
 
     .linha3{
