@@ -236,6 +236,7 @@ option {
     justify-content: center;
     align-items: center;
     width: 4.5rem;
+    height: 3rem;
     background-color: #fff;
     border: #ccc .10rem solid;
     border-radius: .375rem;
@@ -243,7 +244,7 @@ option {
 }
 
 .bandeira-content img{
-    width: 4rem;
+    width: 3rem;
 }
 
 @media screen and (max-width: 800px){
@@ -306,6 +307,7 @@ option {
         justify-content: center;
         align-items: center;
         width: 3.5rem;
+        height: 2.5rem;
         background-color: #fff;
         border: #ccc .10rem solid;
         border-radius: .375rem;
@@ -313,7 +315,7 @@ option {
     }
 
     .bandeira-content img{
-        width: 3rem;
+        width: 2.5rem;
     }
 
     .linha3{
