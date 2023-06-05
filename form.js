@@ -17,7 +17,7 @@ pocket.addEventListener('click', () => {
 for ( i = 0; i < 3; i++) {
   links[i].addEventListener('click', () => {
     navLinks.classList.remove('hide');
-    dark.classList.toggle('hiddem');
+    dark.classList.remove('hiddem');
   });
 }
 
