@@ -220,7 +220,7 @@ option {
 .cartoes-grid-hiddem-pocket{
   display: flex;
   flex-wrap: wrap;
-  max-width: 96vh;
+  max-width: 80vh;
   margin-top: 4vh;
   column-count: 8;
   justify-content: center;
@@ -235,7 +235,7 @@ option {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10vh;
+    width: 8vh;
     background-color: #fff;
     border: #ccc .3vh solid;
     border-radius: .375rem;
