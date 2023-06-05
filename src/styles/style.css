@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root{
-    --color_card_text: #0071D9;
+    --color_blue: #0071D9;
+    --color_red: #F64638;
+    --color_white: #fff;
+    --color_gray: #f7f7f7;
+    --color_border: #ccc;
+    --color_border_hover: #c4d4ff;
+    --color_subtitle: #797979;
+    --color_black: #1d1d1d;
 }
 
 *{
     outline: none;
-    margin: none;
+    margin: 0;
     box-sizing: border-box;
     border: none;
     font-weight: 400;
-    color: #1d1d1d;
+    color: var(--color_black);
     font-family: 'Poppins', sans-serif;
     
 }
@@ -29,7 +36,7 @@ section{
 }
 
 .bgcinza{
-    background-color: #f7f7f7;
+    background-color: var(--color_gray);
 }
 
 h1{
@@ -42,7 +49,7 @@ h1{
 h4{
     font-size: .8rem;
     text-align: center;
-    color: #797979;
+    color: var(--color_subtitle);
     font-weight: 500;
     margin: 8vh 0vh 8vh 0vh;
     
@@ -55,8 +62,23 @@ h4{
     align-items: center;
 }
 
+.header{
+    height: 5rem;
+    width: 100%;
+    background-color: var(--color_white);
+    display: inline-flex;
+    padding: .5rem 2rem;
+    align-items: center;
+}
+
+.title-header{
+    font-size: 1.2rem;
+    font-weight: 500;
+
+}
+
 .navbar1, .container-header{
-    background-color: #ffffff;
+    background-color: var(--color_white);
 }
 
 .logo-header{
@@ -65,7 +87,7 @@ h4{
 
 .banner{
     display: flex;
-    margin-top: 10vh;
+    margin-top: 5rem;
     align-items: center;
     justify-content: center;
 }
@@ -115,29 +137,29 @@ h4{
 }
 
 select{
-    border: .10rem solid #ccc;
-    background-color: #fff;
+    border: .10rem solid var(--color_border);
+    background-color: var(--color_white);
     border-radius: .375rem;
     padding: 2vh;
     cursor: pointer;
 }
 
 select:hover{
-    border: .10rem solid #c4d4ff;
+    border: .10rem solid var(--color_border_hover);
 }
 
 select:focus{
-    border: #4390C2 .10rem solid;
+    border: var(--color_blue) .10rem solid;
 }
 
 select:disabled{
-    border: .10rem dashed #ccc;
-    background-color: #f7f7f7;
+    border: .10rem dashed var(--color_border);
+    background-color: var(--color_gray);
 }
 
 option {
-    background: #fff;
-    color: #1d1d1d;
+    background: var(--color_white);
+    color: var(--color_black);
     margin: 0.2vh 0;
     }
 
@@ -153,17 +175,17 @@ option {
     font-size: 1.5rem !important;
     display: inline-flex;
     align-items: center;
-    border-bottom: .20rem #ccc solid;
+    border-bottom: .20rem var(--color_border) solid;
     
 }
   
 .input-valor.selected {
-    border-bottom: #4390C2 solid;
+    border-bottom: var(--color_blue) solid;
     
 }
 
 .input-valor:hover:not(.selected){
-    border-bottom: #c4d4ff solid;
+    border-bottom: var(--color_border_hover) solid;
 }
 
 #valor-cobrar{
@@ -174,7 +196,7 @@ option {
 }
 
 #valor-cobrar::placeholder{
-    color: #1d1d1d;
+    color: var(--color_black);
 }
 
 .cifrao{
@@ -239,8 +261,8 @@ option {
     align-items: center;
     width: 4.5rem;
     height: 3rem;
-    background-color: #fff;
-    border: #ccc .10rem solid;
+    background-color: var(--color_white);
+    border: var(--color_border) .10rem solid;
     border-radius: .375rem;
     padding: .5vh;
 }
@@ -310,9 +332,6 @@ option {
         align-items: center;
         width: 3.5rem;
         height: 2.5rem;
-        background-color: #fff;
-        border: #ccc .10rem solid;
-        border-radius: .375rem;
         padding: .5vh;
     }
 
