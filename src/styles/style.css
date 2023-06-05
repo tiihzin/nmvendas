@@ -220,11 +220,11 @@ option {
 .cartoes-grid-hiddem-pocket{
   display: flex;
   flex-wrap: wrap;
-  max-width: 80vh;
+  max-width: 33.8rem;
   margin-top: 4vh;
   column-count: 8;
   justify-content: center;
-  gap: 2vh;
+  gap: .8rem;
 }
 
 .cartoes-grid-hiddem-desktop{
@@ -235,7 +235,7 @@ option {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 8vh;
+    width: 3.5rem;
     background-color: #fff;
     border: #ccc .10rem solid;
     border-radius: .375rem;
