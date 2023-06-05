@@ -4,67 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="src/styles/style.css">
     
     <title>Document</title>
 
     
 </head>
 <body>
-<section class="simula-venda">
-    <h1>Simule sua venda Aqui</h1>
-    <div class="grid-formulario">
-        <div class="form-content col">
-            <span>Quanto você quer cobrar?</span>
-            <div class="input-valor row">
-                <span class="cifrao">R$</span>
-                <input aria-label="AmountField" type="text" inputmode="decimal" aria-describedby="AmountField-prefix" placeholder="0,00" id="valor-cobrar" onfocus="divSelect(this)" onblur="divSelect(this)" oninput="formatarValor()">
-            </div>
-        </div>
+<section class="bandeiras-cartoes bgcinza">
+    <h1>Aceite os principais meios de pagamento</h1>
 
-        <div class="display-valores">
-            <div class="content-valores">
-                <span>Se vender por </span>
-                <span class="vende"> R$ <b class="valor" id="valor-vende">00,00</b></span>
-            </div>
-            <div class="content-valores">
-                <span>Você recebe </span>
-                <span class="vende"> R$ <b class="valor" id="valor-recebe">00,00</b></span>
-            </div>
-        </div>
-        <div class="content-como-cobrar col">
-            <span>Com o que você quer cobrar?</span>
-            <select id="como-cobrar" class="row">
-                <option selected value="1" >Maquininhas Point e Point Tap</option>
-                <option value="2">Código QR</option>
-            </select>
-        </div>
-        <div class="content-tipo-pagamento col">
-            <span>Como seus cliente vão pagar?</span>
-            <select id="tipo-pagamento" class="row">
-                <option selected value="1" >Débito</option>
-                <option value="2">Crédito</option>
-                <option value="3">Vai Pix</option>
-            </select>
-        </div>
-        <div class="content-quando-recebe col">
-            <span>Quando você quer receber o dinheiro?</span>
-            <select id="quando-recebe" class="row">
-                <option selected value="1" >Na hora</option>
-                <option value="2">14 dias</option>
-                <option value="3">30 dias</option>
-            </select>
-        </div>
-        <div class="content-tipo-parcelas col">
-            <span>Que tipo de pagamento você quer oferecer?</span>
-            <select id="tipo-parcelas" disabled class="row">
-                <option selected value="1" >À vista</option>
-                <option value="2">Parcelado Comprador</option>
-                <option value="3">Parcelado Vendedor</option>
-            </select>
-        </div>
+    <div class="cartoes-grid-hiddem-pocket">
+        <div class="bandeira-content"><img src="src/cartoes/AleloIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/AmexIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/AppleIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/CabalIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/DinersIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/EloIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/GoogleIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/HipercardIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/HiperIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/MasterIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/PixIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/QRIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/SansungIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/SodexoIcon.svg" alt=""></div>
+        <div class="bandeira-content"><img src="src/cartoes/VisaIcon.svg" alt=""></div>
     </div>
+
+    <div class="cartoes-grid-hiddem-desktop">
+        <div class="linha3">
+            <div class="bandeira-content"><img src="src/cartoes/AleloIcon.svg" alt=""></div>
+            <div class="bandeira-content"><img src="src/cartoes/AmexIcon.svg" alt=""></div>
+            <div class="bandeira-content"><img src="src/cartoes/AppleIcon.svg" alt=""></div>
+        </div>
+        <div class="linha4">
+            <div class="bandeira-content"><img src="src/cartoes/CabalIcon.svg" alt=""></div>
+            <div class="bandeira-content"><img src="src/cartoes/DinersIcon.svg" alt=""></div>
+            <div class="bandeira-content"><img src="src/cartoes/EloIcon.svg" alt=""></div>
+            <div class="bandeira-content"><img src="src/cartoes/GoogleIcon.svg" alt=""></div>
+        </div>
+        <div class="linha3">
+            <div class="bandeira-content"><img src="src/cartoes/HipercardIcon.svg" alt=""></div>
+            <div class="bandeira-content"><img src="src/cartoes/HiperIcon.svg" alt=""></div>
+            <div class="bandeira-content"><img src="src/cartoes/MasterIcon.svg" alt=""></div>
+        </div>
+        <div class="linha4">
+            <div class="bandeira-content"><img src="src/cartoes/PixIcon.svg" alt=""></div>
+            <div class="bandeira-content"><img src="src/cartoes/QRIcon.svg" alt=""></div>
+            <div class="bandeira-content"><img src="src/cartoes/SansungIcon.svg" alt=""></div>
+            <div class="bandeira-content"><img src="src/cartoes/SodexoIcon.svg" alt=""></div>
+        </div>
+        <div class="bandeira-content"><img src="src/cartoes/VisaIcon.svg" alt=""></div>
+    </div>
+
+    <h4>Ofereça pagamento parcelado em até 12 vezes.</h4>
 </section>
-<script src="form.js"></script>
 </body>
 </html>
