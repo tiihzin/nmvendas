@@ -270,8 +270,11 @@
               </div>
           </div>
       </div>
-      <div class="copyright">copyright © 2023 notermaquininhas.com</div>
+      <div class="copyright">copyright © <span id="DateCopy"></span> nortemaquininhas.com</div>
   </footer>
-
+  <script>
+    data = new Date().getFullYear();
+    document.getElementById("DateCopy").innerHTML = data;
+  </script>
 </body>
 </html>
