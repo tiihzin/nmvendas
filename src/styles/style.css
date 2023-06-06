@@ -29,6 +29,10 @@ body{
     width: 100%;
 }
 
+.no-scrol{
+    overflow: hidden;
+}
+
 section{
     width: 100%;
     padding: 3vh 5vh;
