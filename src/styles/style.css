@@ -38,10 +38,6 @@ section{
     align-items: center;
 }
 
-.bgcinza{
-    background-color: var(--color_gray);
-}
-
 h1{
     font-size: 1.5rem;
     font-weight: 600;
@@ -55,10 +51,46 @@ h4{
     color: var(--color_subtitle);
     font-weight: 500;
     margin: 8vh 0vh 8vh 0vh;
-    
-
 }
 
+.bgcinza{
+    background-color: var(--color_gray);
+}
+
+.hiddem-desktop{
+    display: none;
+}
+
+.hiddem-pocket{
+    display: block;
+}
+
+.hiddem{
+    display: none;
+}
+
+.hide{
+    right: 0rem !important;
+}
+
+/*Butões Fixos*/
+.fixed-btx{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fixed-btx img{
+    width: 80%;
+    border-radius: 100%;
+    box-shadow: 0px .5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/*Header*/
 .navbar1{
     height: 5rem;
     padding: 0rem 1rem;
@@ -90,25 +122,15 @@ h4{
     font-weight: 400;
 }
 
-.menu,.menu-nav{
+.menu,
+.menu-nav{
     display: flex;
     gap: 1rem;
 }
 
-.hide{
-    right: 0rem !important;
+.menu-pocket{
+    cursor: pointer;
 }
-
-.close{
-    position: absolute;
-    top: 1.7rem;
-}
-
-.hiddem{
-    display: none;
-    
-}
-
 
 .darkness-body{
     width: 100vw;
@@ -133,6 +155,7 @@ h4{
     height: 2rem;
     border-radius: 1rem;
     background-color: #1d1d1d;
+    cursor: pointer;
 }
 
 .content-redes img{
@@ -152,7 +175,6 @@ h4{
 .insta:hover{
     background-color: #F64638;
 }
-
 
 .face img{
     width: .8rem;
@@ -188,6 +210,7 @@ h4{
         flex-direction: column;
         font-size: 1.2rem;
         align-items: end;
+        cursor: pointer;
     }
 
     .nav-donw{
@@ -212,6 +235,7 @@ h4{
     height: 3rem;
 }
 
+/*Banner*/
 .banner{
     display: flex;
     margin-top: 5rem;
@@ -227,15 +251,6 @@ h4{
 .banner-mobile{
     display: none;
 }
-
-.hiddem-desktop{
-    display: none;
-}
-
-.hiddem-pocket{
-    display: block;
-}
-
 
 /*Simular Venda*/
 .simula-venda{
@@ -290,7 +305,6 @@ option {
     margin: 0.2vh 0;
     }
 
-
 .col{
     display: flex;
     flex-direction: column;
@@ -307,8 +321,7 @@ option {
 }
   
 .input-valor.selected {
-    border-bottom: var(--color_blue) solid;
-    
+    border-bottom: var(--color_blue) solid;    
 }
 
 .input-valor:hover:not(.selected){
@@ -359,7 +372,6 @@ option {
     flex-direction: column;
 }
 
-
 /*Conteudo com as maquininhas*/
 .itens_maquininhas_carrousel{
     width: 90%;
@@ -398,14 +410,18 @@ option {
     width: 3rem;
 }
 
+
+/*Responsividade*/
 @media screen and (max-width: 800px){
     .banner-desktop{
         display: none;
     }
+
     .banner-mobile{
         display: block;
         max-width: 100%;
     }
+
     /*simular venda*/
     .grid-formulario{
         align-items: end;
@@ -435,7 +451,6 @@ option {
         flex-wrap:nowrap
     }
     
-
     /*Cartões*/
     .cartoes-grid-hiddem-desktop{
         display: flex;
@@ -490,6 +505,7 @@ option {
     .title-marca{
         display: none;
     }
+
     /*card*/
     .card-col{
         flex-direction: column;
