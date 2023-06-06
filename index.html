@@ -13,12 +13,13 @@
 
     <!-- Scripts locais -->
     <script src="./src/scripts/regex.js" defer></script>
+    <script src="src/scripts/colapsed-menu.js" defer></script>
     <link rel="shortcut icon" href="src/Favicon.png" type="image/x-icon">
     <title>Norte Maquinas de Cartão</title>
 </head>
-<body>
+<body class="body">
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar1">
+    <!--<nav class="navbar fixed-top navbar-expand-lg navbar1">
         <div class="container-fluid container-header">
             <div>
                 <img src="./src/header/LogoHearder.svg" class="logo-header" alt="Norte Maquininhas">
@@ -47,14 +48,54 @@
             </ul>
           </div>
         </div>
-      </nav>
-      <!-- Body -->
+      </nav> -->
+    <nav id="header">
+      <div class="content-logo">
+        <img class="logo-header" src="src/header/LogoHearder.svg" alt="Norte Maquininhas">
+        <span class="hiddem-pocket title-header">
+          <span style="color: #F64638; font-weight: 400;">Norte</span>
+        Maquinas de Cartão</span>
+      </div>
 
-        <!-- Banner -->
-        <div class="banner">
-            <img src="./src/banner/Banner Desktop.png" alt="Desktop" class="banner-desktop">
-            <img src="./src/banner/Banner Mobile.png" class="banner-mobile" alt="Banner Mobile">
+      <div class="menu">
+        <ul class="menu-nav">
+          <a href="#" class="menu-link">Maquininhas</a>
+          <a href="#simular-venda" class="menu-link">Simular Venda</a>
+          <a href="#" class="menu-link">Fale Conosco</a>
+        </ul>
+        <div class="nav-donw hiddem">
+          <h4>Siga nossas Redes Sociais</h4>
+          <div class="redes-sociais">
+            <a href="https://pt-br.facebook.com" target="_blank" class="content-redes face"><img src="src/redes-sociais/FaceV.svg" alt=""></a>
+            <a href="https://instagram.com" target="_blank" class="content-redes insta"><img src="src/redes-sociais/InstaV.svg" alt=""></a>
+            <a href="https://twitter.com" target="_blank" class="content-redes twitter"><img src="src/redes-sociais/TwitterV.svg" alt=""></a>
+          </div>
         </div>
+      </div>
+
+      <div class="menu-pocket hiddem-desktop">
+        <img class="img-menu" src="src/header/HambugerMenu.svg" alt="">
+      </div>
+
+      <div class="darkness-body hiddem"></div>
+    </nav>
+    
+    <!--Fixed Butons-->
+    <span class="fixed-btx">
+      <a href="https://pt-br.facebook.com" target="_blank" class="fixed-face">
+          <img src="src/redes-sociais/FaceFixed.svg" alt="">
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=5591982809717&text=Ixi,%20funcionou%20mesmo%20mano!" target="_blank"  class="fixed-whats">
+          <img src="src/redes-sociais/WhatFixed.svg" alt="">
+      </a>
+    </span>
+    <!-- Body -->
+
+    <!-- Banner -->
+    <div class="banner">
+      <img src="./src/banner/Banner Desktop.png" alt="Desktop" class="banner-desktop">
+      <img src="./src/banner/Banner Mobile.png" class="banner-mobile" alt="Banner Mobile">
+    </div>
        
         <!-- Conteudo com as maquininhas -->
         <!--<div class="itens_maquininhas_carrousel">
@@ -101,7 +142,7 @@
         </div>-->
 
         <!-- Bandeiras do Cartões -->
-        <section class="bandeiras-cartoes">
+    <section class="bandeiras-cartoes">
           <h1>Aceite os principais meios de pagamento</h1>
       
           <div class="cartoes-grid-hiddem-pocket">
@@ -149,62 +190,88 @@
           </div>
       
           <h4>Ofereça pagamento parcelado em até 12 vezes.</h4>
-      </section>
+    </section>
 
-        <!--Simular venda -->
-        <section class="simula-venda" id="simula-venda">
-          <h1>Simule sua venda Aqui</h1>
-          <div class="grid-formulario">
-              <div class="form-content col" >
-                  <span>Quanto você quer cobrar?</span>
-                  <div class="input-valor linha" style=" --bs-glutter-x: 0rem;">
-                      <span class="cifrao">R$</span>
-                      <input aria-label="AmountField" type="text" maxlength="10" inputmode="decimal" aria-describedby="AmountField-prefix" placeholder="0,00" id="valor-cobrar" onfocus="divSelect(this)" onblur="divSelect(this)" oninput="formatarValor()">
-                  </div>
-              </div>
+    <!--Simular venda -->
+    <section class="simula-venda" id="simula-venda">
+      <h1>Simule sua venda Aqui</h1>
+      <div class="grid-formulario">
+        <div class="form-content col" >
+            <span>Quanto você quer cobrar?</span>
+            <div class="input-valor linha" style=" --bs-glutter-x: 0rem;">
+              <span class="cifrao">R$</span>
+                <input aria-label="AmountField" type="text" maxlength="10" inputmode="decimal" aria-describedby="AmountField-prefix" placeholder="0,00" id="valor-cobrar" onfocus="divSelect(this)" onblur="divSelect(this)" oninput="formatarValor()">
+          </div>
+        </div>
       
-              <div class="display-valores">
-                  <div class="content-valores">
-                      <span>Se vender por </span>
-                      <span class="vende"> R$ <b class="valor" id="valor-vende">0,00</b></span>
+        <div class="display-valores">
+          <div class="content-valores">
+            <span>Se vender por </span>
+            <span class="vende"> R$ <b class="valor" id="valor-vende">0,00</b></span>
+          </div>
+          <div class="content-valores">
+            <span>Você recebe </span>
+            <span class="vende"> R$ <b class="valor" id="valor-recebe">0,00</b></span>
+          </div>
+        </div>
+        <div class="content-como-cobrar col">
+          <span>Com o que você quer cobrar?</span>
+          <select id="como-cobrar" class="linha" style=" --bs-glutter-x: .0rem;">
+            <option selected value="1" >Maquininhas Point e Point Tap</option>
+            <option value="2">Código QR</option>
+          </select>
+        </div>
+        <div class="content-tipo-pagamento col">
+          <span>Como seus cliente vão pagar?</span>
+          <select id="tipo-pagamento" class="linha" style=" --bs-glutter-x: .0rem;">
+            <option selected value="1" >Débito</option>
+            <option value="2">Crédito</option>
+            <option value="3">Via Pix</option>
+          </select>
+        </div>
+        <div class="content-quando-recebe col">
+          <span>Quando você quer receber o dinheiro?</span>
+          <select id="quando-recebe" class="linha" style=" --bs-glutter-x: .0rem;">
+            <option selected value="1" >Na hora</option>
+            <option value="2">14 dias</option>
+            <option value="3">30 dias</option>
+          </select>
+        </div>
+        <div class="content-tipo-parcelas col">
+          <span>Que tipo de pagamento você quer oferecer?</span>
+          <select id="tipo-parcelas" disabled class="linha" style=" --bs-glutter-x: .0rem;">
+            <option selected value="1" >À vista</option>
+            <option value="2">Parcelado Comprador</option>
+            <option value="3">Parcelado Vendedor</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer id="footer">
+      <div class="content-footer">
+          <img src="src/LogoFooter.svg" alt="Logo Footer" class="logo-footer">
+          <div class="fale-conosco">
+              <a href="" class="telefone">
+                  <h1 class="telefone">(xx) xxxxx-xxxx</h1>
+              </a>
+              <a href="" class="email">
+                  <h2>exemplo@nortemaquinas.com</h2>
+              </a>
+
+              <div class="footer-donw hiddem-pocket">
+                  <h4>Siga nossas Redes Sociais</h4>
+                  <div class="redes-sociais">
+                      <a href="https://pt-br.facebook.com" target="_blank" class="content-redes face"><img src="src/redes-sociais/FaceV.svg" alt=""></a>
+                      <a href="https://instagram.com" target="_blank" class="content-redes insta"><img src="src/redes-sociais/InstaV.svg" alt=""></a>
+                      <a href="https://twitter.com" target="_blank" class="content-redes twitter"><img src="src/redes-sociais/TwitterV.svg" alt=""></a>
                   </div>
-                  <div class="content-valores">
-                      <span>Você recebe </span>
-                      <span class="vende"> R$ <b class="valor" id="valor-recebe">0,00</b></span>
-                  </div>
-              </div>
-              <div class="content-como-cobrar col">
-                  <span>Com o que você quer cobrar?</span>
-                  <select id="como-cobrar" class="linha" style=" --bs-glutter-x: .0rem;">
-                      <option selected value="1" >Maquininhas Point e Point Tap</option>
-                      <option value="2">Código QR</option>
-                  </select>
-              </div>
-              <div class="content-tipo-pagamento col">
-                  <span>Como seus cliente vão pagar?</span>
-                  <select id="tipo-pagamento" class="linha" style=" --bs-glutter-x: .0rem;">
-                      <option selected value="1" >Débito</option>
-                      <option value="2">Crédito</option>
-                      <option value="3">Via Pix</option>
-                  </select>
-              </div>
-              <div class="content-quando-recebe col">
-                  <span>Quando você quer receber o dinheiro?</span>
-                  <select id="quando-recebe" class="linha" style=" --bs-glutter-x: .0rem;">
-                      <option selected value="1" >Na hora</option>
-                      <option value="2">14 dias</option>
-                      <option value="3">30 dias</option>
-                  </select>
-              </div>
-              <div class="content-tipo-parcelas col">
-                  <span>Que tipo de pagamento você quer oferecer?</span>
-                  <select id="tipo-parcelas" disabled class="linha" style=" --bs-glutter-x: .0rem;">
-                      <option selected value="1" >À vista</option>
-                      <option value="2">Parcelado Comprador</option>
-                      <option value="3">Parcelado Vendedor</option>
-                  </select>
               </div>
           </div>
-      </section>
+      </div>
+      <div class="copyright">copyright © 2023 notermaquininhas.com</div>
+  </footer>
+
 </body>
 </html>

@@ -29,6 +29,15 @@ body{
     width: 100%;
 }
 
+a{
+    text-decoration: none;
+    color: var(--color_black);
+}
+
+a:hover{
+    color: var(--color_blue);
+}
+
 .no-scrol{
     overflow: hidden;
 }
@@ -373,7 +382,8 @@ footer{
     flex-direction: column;
     width: 100%;
     align-items: center;
-    border-top: var(--color_blue) .7rem solid;
+    margin-top: 10vh;
+    border-top: var(--color_blue) .5rem solid;
     background-color: var(--color_gray);
     bottom: 0;
     padding: 3vh 4vh;
@@ -550,6 +560,7 @@ footer h4 {
     /*Botão fixo*/
     .fixed-btx{
         display: flex;
+        gap: 1vh;
     }
 
     /*Footer*/
