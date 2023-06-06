@@ -441,7 +441,7 @@ footer h4 {
     }
     
     .menu{
-        min-width: 40%;
+        min-width: 50%;
         height: 100vh;
         flex-direction: column;
         justify-content: space-between;
