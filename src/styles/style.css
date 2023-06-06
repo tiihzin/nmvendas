@@ -35,7 +35,7 @@ body{
 
 section{
     width: 100%;
-    padding: 3vh 5vh;
+    padding: 2vh 5vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -376,7 +376,7 @@ footer{
     border-top: var(--color_blue) 1.5vh solid;
     background-color: var(--color_gray);
     bottom: 0;
-    padding: 3vh 5vh;
+    padding: 2vh 5vh;
 }
 
 footer h1{
