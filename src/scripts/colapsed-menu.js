@@ -31,3 +31,15 @@ for ( i = 0; i < 3; i++) {
   });
 }
 
+setInterval(() => {
+  if(window.innerWidth >= 800 && body.classList.contains('no-scrol')){
+    body.classList.remove('no-scrol');
+    dark.classList.add('hiddem');
+    
+  } 
+  if(navLinks.classList.contains('hide') && window.innerWidth <= 800){
+    body.classList.add('no-scrol');
+    dark.classList.remove('hiddem');
+  }
+})
+
