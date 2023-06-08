@@ -84,6 +84,7 @@ h4{
 
 /*Botões Fixos*/
 .fixed-btx{
+    z-index: 3;
     position: fixed;
     bottom: 1rem;
     right: 1rem;
@@ -432,6 +433,7 @@ option {
     align-items: center;
     justify-content: center;
 }
+    
 .card{
     padding: 0;
     border: none;
@@ -697,5 +699,8 @@ footer h4 {
     /*card*/
     .card-col{
         flex-direction: column;
+    }
+    .card-header{
+        font-size: .9em;
     }
 }
