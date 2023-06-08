@@ -280,15 +280,11 @@
               </div>
           </div>
       </div>
-      <div class="copyright">copyright © <ano class="ano"></ano> notermaquininhas.com</div>
-      
-      <script>
-        var anocopy = document.querySelector('.ano');
-        var date = new Date();
-        var ano = date.getUTCFullYear()
-        anocopy.innerHTML = ano;
-      </script>
-    </footer>
-
+      <div class="copyright">copyright © <span id="DateCopy"></span> nortemaquininhas.com</div>
+  </footer>
+  <script>
+    data = new Date().getFullYear();
+    document.getElementById("DateCopy").innerHTML = data;
+  </script>
 </body>
 </html>
