@@ -338,11 +338,19 @@ option {
     flex-direction: column;
 }
 
-/*Conteudo com as maquininhas*/
-.itens_maquininhas_carrousel{
-    width: 90%;
-    margin: auto;
-    background-color: #333;
+/*Cards*/
+.card{
+    padding: 0;
+}
+.accordion-body{
+    padding: 0;
+}
+.card-header{
+    background-color: var(--color_red);
+    color:  #FFFFFF;
+}
+.card-text{
+    font-size: .9em;
 }
 
 /*Bandeiras dos Cartões*/
