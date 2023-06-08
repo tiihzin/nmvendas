@@ -515,7 +515,7 @@ footer h4 {
     align-items: flex-end;
 }
 
-.copyright, .ano{
+.copyright, #DateCopy{
     font-size: .7rem;
     color: var(--color_subtitle);
     margin-top: 6vh;
