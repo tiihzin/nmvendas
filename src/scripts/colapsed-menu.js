@@ -17,6 +17,13 @@ pocket.addEventListener('click', () => {
   dark.classList.toggle('hiddem');
 });
 
+dark.addEventListener('click',() =>{ 
+  navLinks.classList.remove('hide');
+  pocketimg.src = "src/header/HambugerMenu.svg";
+  body.classList.remove('no-scrol');
+  dark.classList.toggle('hiddem');
+})
+
 for ( i = 0; i < 3; i++) {
   links[i].addEventListener('click', () => {
     navLinks.classList.remove('hide');
@@ -30,4 +37,16 @@ for ( i = 0; i < 3; i++) {
     }
   });
 }
+
+setInterval(() => {
+  if(window.innerWidth >= 800 && body.classList.contains('no-scrol')){
+    body.classList.remove('no-scrol');
+    dark.classList.add('hiddem');
+    
+  } 
+  if(navLinks.classList.contains('hide') && window.innerWidth <= 800){
+    body.classList.add('no-scrol');
+    dark.classList.remove('hiddem');
+  }
+})
 
