@@ -423,7 +423,6 @@ option {
 .section_card_container{
     width: 94vw;
     margin: auto;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
