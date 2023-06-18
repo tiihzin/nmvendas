@@ -429,7 +429,7 @@ option {
     justify-content: center;
 }
 .card_content{
-    gap: 3%;
+    gap: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
