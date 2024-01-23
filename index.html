@@ -1,516 +1,1097 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link para o bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    
-    <!-- Estilos locais -->
-    <link rel="stylesheet" href="src/styles/style.css">
-
-    <!-- Scripts locais -->
-    <script src="./src/scripts/regex.js" defer></script>
-    <script src="src/scripts/colapsed-menu.js" defer></script>
-    <link rel="shortcut icon" href="src/Favicon.png" type="image/x-icon">
-    <title>Norte Maquinas de Cartão</title>
-</head>
-<body class="body">
-    <nav id="header">
-      <div class="content-logo">
-        <img class="logo-header" src="src/header/LogoHearder.svg" alt="Norte Maquininhas">
-        <span class="hiddem-pocket title-header">
-          <span style="color: #F64638; font-weight: 400;">Norte</span>
-        Maquinas de Cartão</span>
-      </div>
-
-      <div class="menu">
-        <ul class="menu-nav">
-          <a href="#section-maquininhas" class="menu-link">Maquininhas</a>
-          <a href="#simula-venda" class="menu-link">Simular Venda</a>
-          <a href="https://api.whatsapp.com/send?phone=5591982869577&text=" class="menu-link">Fale Conosco</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <link rel="shortcut icon" href="src/Favicon.png" type="image/x-icon" />
+    <script defer src="src/scripts/menu.js"></script>
+    <script defer src="src/scripts/regex.js"></script>
+    <title>Norte Maquininhas de Cartão</title>
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="src/header/LogoHearder.svg"
+        alt="Norte Maquininhas de Cartão"
+        class="header-img"
+      />
+      <span onclick="abremenu()" class="nav-btn hiddem-desktop"
+        ><svg
+          width="28"
+          height="21"
+          viewBox="0 0 28 21"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="28" height="2.625" rx="1.3125" fill="#0D0D0D" />
+          <rect
+            y="9.1875"
+            width="28"
+            height="2.625"
+            rx="1.3125"
+            fill="#0D0D0D"
+          />
+          <rect
+            y="18.375"
+            width="28"
+            height="2.625"
+            rx="1.3125"
+            fill="#0D0D0D"
+          />
+        </svg>
+      </span>
+      <nav class="nav hiddem-mobile">
+        <ul class="nav-content">
+          <li><a href="#maquininhas" class="nav-link">Maquininhas</a></li>
+          <li><a href="#simula-vendas" class="nav-link">Simular Venda</a></li>
+          <li><a href="" class="nav-link">Fale Conosco</a></li>
         </ul>
-        <div class="nav-donw hiddem">
-          <h4>Siga nossas Redes Sociais</h4>
-          <div class="redes-sociais">
-            <a href="https://www.facebook.com/profile.php?id=100091642278969&mibextid=ZbWKwL" target="_blank" class="content-redes face"><img src="src/redes-sociais/FaceV.svg" alt=""></a>
-            <a href="https://www.instagram.com/nortemaquinasdecartao/" target="_blank" class="content-redes insta"><img src="src/redes-sociais/InstaV.svg" alt=""></a>
-            <!-- <a href="https://twitter.com" target="_blank" class="content-redes twitter"><img src="src/redes-sociais/TwitterV.svg" alt=""></a>
-               -->
+      </nav>
+    </header>
+
+    <div id="menu" class="menu-mobile close hiddem-desktop">
+        <span onclick="abremenu()" class="nav-btn">
+            <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2.02881" y="0.672424" width="28" height="2.625" rx="1.3125" transform="rotate(45 2.02881 0.672424)" fill="#0D0D0D"/>
+                <rect x="0.172363" y="20.4714" width="28" height="2.625" rx="1.3125" transform="rotate(-45 0.172363 20.4714)" fill="#0D0D0D"/>
+                </svg>                
+        </span>
+        <nav class="nav hiddem-desktop">
+            <ul class="nav-content">
+              <li><a href="#maquininhas" class="nav-link">Maquininhas</a></li>
+              <li><a href="#simula-vendas" class="nav-link">Simular Venda</a></li>
+              <li><a href="" class="nav-link">Fale Conosco</a></li>
+            </ul>
+          </nav>
+          <div class="social-content">
+            <h4 class="tittle-social">Siga-nos nas Redes Socias</h4>
+            <div class="grid-social">
+                <a class="social-link face"><svg width="14" height="27" viewBox="0 0 14 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.15906 26.7821C6.74235 27.2724 9.26783 26.7821 9.26783 26.7821V15.0649H13.083L13.8199 10.2107H9.26783V7.06377C9.26783 5.74141 9.90643 4.45252 11.9368 4.45252H14V0.318037C14 0.318037 12.1333 0 10.3485 0C6.59883 0 4.15906 2.30995 4.15906 6.51139V10.2107H0V15.0649H4.15906V26.7821Z" fill="white"/>
+                    </svg></a>
+                <a class="social-link insta"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.88686 0.305664H13.9699C17.0491 0.305664 19.551 2.80755 19.551 5.8868V13.9698C19.551 15.45 18.963 16.8696 17.9163 17.9163C16.8697 18.9629 15.4501 19.5509 13.9699 19.5509H5.88686C2.80761 19.5509 0.305725 17.0491 0.305725 13.9698V5.8868C0.305725 4.40659 0.893736 2.98701 1.9404 1.94034C2.98707 0.893675 4.40665 0.305664 5.88686 0.305664ZM5.6944 2.23019C4.77565 2.23019 3.89453 2.59516 3.24488 3.24482C2.59523 3.89447 2.23025 4.77559 2.23025 5.69434V14.1623C2.23025 16.0772 3.7795 17.6264 5.6944 17.6264H14.1623C15.0811 17.6264 15.9622 17.2614 16.6119 16.6118C17.2615 15.9621 17.6265 15.081 17.6265 14.1623V5.69434C17.6265 3.77944 16.0772 2.23019 14.1623 2.23019H5.6944ZM14.9803 3.67359C15.2993 3.67359 15.6052 3.80032 15.8308 4.02589C16.0564 4.25146 16.1831 4.55741 16.1831 4.87642C16.1831 5.19543 16.0564 5.50137 15.8308 5.72695C15.6052 5.95252 15.2993 6.07925 14.9803 6.07925C14.6612 6.07925 14.3553 5.95252 14.1297 5.72695C13.9041 5.50137 13.7774 5.19543 13.7774 4.87642C13.7774 4.55741 13.9041 4.25146 14.1297 4.02589C14.3553 3.80032 14.6612 3.67359 14.9803 3.67359ZM9.92837 5.11699C11.2044 5.11699 12.4282 5.62389 13.3305 6.52619C14.2328 7.42849 14.7397 8.65226 14.7397 9.92831C14.7397 11.2043 14.2328 12.4281 13.3305 13.3304C12.4282 14.2327 11.2044 14.7396 9.92837 14.7396C8.65233 14.7396 7.42855 14.2327 6.52625 13.3304C5.62395 12.4281 5.11705 11.2043 5.11705 9.92831C5.11705 8.65226 5.62395 7.42849 6.52625 6.52619C7.42855 5.62389 8.65233 5.11699 9.92837 5.11699ZM9.92837 7.04151C9.16274 7.04151 8.42847 7.34566 7.8871 7.88704C7.34572 8.42841 7.04157 9.16268 7.04157 9.92831C7.04157 10.6939 7.34572 11.4282 7.8871 11.9696C8.42847 12.511 9.16274 12.8151 9.92837 12.8151C10.694 12.8151 11.4283 12.511 11.9696 11.9696C12.511 11.4282 12.8152 10.6939 12.8152 9.92831C12.8152 9.16268 12.511 8.42841 11.9696 7.88704C11.4283 7.34566 10.694 7.04151 9.92837 7.04151Z" fill="white"/>
+                    </svg>
+                    </a>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div class="menu-pocket hiddem-desktop">
-        <img class="img-menu" src="src/header/HambugerMenu.svg" alt="">
-      </div>
-
-      <div class="darkness-body hiddem"></div>
-    </nav>
-    
-    <!--Fixed Butons-->
-    <span class="fixed-btx">
-      <a class="ifacelink" href="https://www.facebook.com/profile.php?id=100091642278969&mibextid=ZbWKwL" target="_blank" class="fixed-face">
-          <img src="src/redes-sociais/FaceFixed.svg" alt="">
-      </a>
-      <a title="Falar com o atendente" href="https://api.whatsapp.com/send?phone=5591982869577&text=" target="_blank"  class="fixed-whats">
-          <img src="src/redes-sociais/WhatFixed.svg" alt="">
-      </a>
-    </span>
-    
-    <!-- Banner -->
-    <div class="banner">
-      <img src="./src/banner/Banner Desktop.png" alt="Desktop" class="banner-desktop">
-      <img src="./src/banner/Banner Mobile.png" class="banner-mobile" alt="Banner Mobile">
     </div>
-       
-    <!-- conteudo com os cards -->
-    <section class="section_card_container" id="section-maquininhas">
-      <div class="container">
-        <div class="grid row card_content" style="--bs-columns: 6;">
-          <div class="card g-col-6 g-col-md-4" style="width: 18rem;">
-            <div class="shadow-lg bg-body-tertiary rounded">
-              <div class="text-center card-header  mb-3" style="max-width: 18rem;">
-                <img width="20" height="16" src="./src/icons/cards/IcoMaisBarato.svg" alt="">
-                A mais barata do Brasil
-              </div>
-                <img src="./src/images/Point mini NFC.svg" class="card-img-top" alt="...">
-                <h5 class="card-title text-center">Point Mini NFC</h5>
-                <p class="card-text text-center">Aceite pagamentos por aproximação</p>
-            </div>
-              <button class="btn btn-primary btn-comprar">
-                <a style="color: #FFFFFF;" target="_blank" href="https://api.whatsapp.com/send?phone=5591982869577&text=">Comprar agora</a>
-                <img src="./src/icons/cards/carrinho_venda.svg" alt="">
-              </button>
-      
-              <div class="accordion card_content_info" id="accordionExample">
-                <div class="accordion-item card_content_info_item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapseTwo">
-                      Mostrar Informações
-                    </button>
-                  </h2>
-                  <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="list-group">
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/levar_no_bolso.svg" alt="Bolso">
-                          Fácil de levar no bolso
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/comprovante_sms.svg" alt="comprovante">
-                          Envia o comprovante por sms
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/garantia.svg" alt="">
-                          3 anos de garantia
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/bluetooth.svg" alt="">
-                          Conexão Bluetooth com celular
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/pagamento_aproximacao.svg" alt="">
-                          Aceita aproximação
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/bateria.svg" alt="">
-                          10 horas de bateria
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="card g-col-6 g-col-md-4" style="width: 18rem;">
-            <div class="shadow-lg bg-body-tertiary rounded">
-              <div class="card-header text-center  mb-3" style="max-width: 18rem;">
-                Aqueça suas vendas no verão
-              </div>
-                <img src="./src/images/Poinrt mini chip.svg" class="card-img-top" alt="...">
-                <h5 class="card-title text-center">Point Mini Chip</h5>
-                <p class="card-text text-center">Leve para qualquer lugar</p>
-            </div>
-              <button class="btn btn-primary btn-comprar">
-                <a style="color: #FFFFFF;" target="_blank" href="https://api.whatsapp.com/send?phone=5591982869577&text=">Comprar agora</a>
-                <img src="./src/icons/cards/carrinho_venda.svg" alt="">
-              </button>
-      
-              <div class="accordion card_content_info" id="accordionExample">
-                <div class="accordion-item card_content_info_item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapseTwo">
-                      Mostrar Informações
-                    </button>
-                  </h2>
-                  <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="list-group">
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/levar_no_bolso.svg" alt="Bolso">
-                          Fácil de levar no bolso
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/comprovante_sms.svg" alt="comprovante">
-                          Envia o comprovante por sms
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/garantia.svg" alt="">
-                          3 anos de garantia
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/wifi.svg" alt="">
-                          Internet ilimitada e wifi
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/pagamento_aproximacao.svg" alt="">
-                          Aceita aproximação
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/bateria.svg" alt="">
-                          8 horas de bateria
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="card g-col-6 g-col-md-4" style="width: 18rem;">
-            <div class="shadow-lg bg-body-tertiary rounded">
-              <div class="card-header text-center  mb-3" style="max-width: 18rem;">
-                Aqueça suas vendas no verão
-              </div>
-                <img src="./src/images/Point Pro 2.svg" class="card-img-top" alt="...">
-                <h5 class="card-title text-center">Point Pro 2</h5>
-                <p class="card-text text-center">Imprima comprovantes</p>
-            </div>
-              <button class="btn btn-primary btn-comprar">
-                <a style="color: #FFFFFF;" target="_blank" href="https://api.whatsapp.com/send?phone=5591982869577&text=">Comprar agora</a>
-                <img src="./src/icons/cards/carrinho_venda.svg" alt="">
-              </button>
-      
-              <div class="accordion card_content_info" id="accordionExample">
-                <div class="accordion-item card_content_info_item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapseTwo">
-                      Mostrar Informações
-                    </button>
-                  </h2>
-                  <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="list-group">
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/recarga_celular.svg" alt="">
-                          Faz recarga de celular
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/comprovante_sms.svg" alt="comprovante">
-                          Imprime o comprovante
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/garantia.svg" alt="">
-                          3 anos de garantia
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/wifi.svg" alt="">
-                          Internet ilimitada e wifi
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/pagamento_aproximacao.svg" alt="">
-                          Aceita aproximação
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/bateria.svg" alt="">
-                          24 horas de bateria
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="card g-col-6 g-col-md-4" style="width: 18rem;">
-            <div class="shadow-lg bg-body-tertiary rounded">
-              <div class="card-header text-center  mb-3" style="max-width: 18rem;">
-                <img width="20" height="16" src="./src/icons/cards/IcoMaisVendido.svg" alt="">
-                Mais vendida!
-              </div>
-                <img src="./src/images/Point smart.svg" class="card-img-top" alt="...">
-                <h5 class="card-title text-center">Point Smart</h5>
-                <p class="card-text text-center">Internet grátis e wifi</p>
-            </div>
-              <button class="btn btn-primary btn-comprar">
-                <a style="color: #FFFFFF;" target="_blank" href="https://api.whatsapp.com/send?phone=5591982869577&text=">Comprar agora</a>
-                <img src="./src/icons/cards/carrinho_venda.svg" alt="">
-              </button>
-      
-              <div class="accordion card_content_info" id="accordionExample">
-                <div class="accordion-item card_content_info_item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapseTwo">
-                      Mostrar Informações
-                    </button>
-                  </h2>
-                  <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="list-group">
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/design_digital.svg" alt="">
-                          Design totalmente digital
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/comprovante_sms.svg" alt="comprovante">
-                          Imprime o comprovante
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/garantia.svg" alt="">
-                          3 anos de garantia
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/wifi.svg" alt="">
-                          Internet 4G ilimitada
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/pagamento_aproximacao.svg" alt="">
-                          Aceita aproximação
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/bateria.svg" alt="">
-                          72 horas de bateria
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="card g-col-6 g-col-md-4" style="width: 18rem;">
-            <div class="shadow-lg bg-body-tertiary rounded">
-              <div class="card-header text-center  mb-3" style="max-width: 18rem;">
-                Lançamento
-              </div>
-                <img src="./src/images/Point air.svg" class="card-img-top" alt="...">
-                <h5 class="card-title text-center">Point Air</h5>
-                <p class="card-text text-center">Internet grátis e wifi</p>
-            </div>
-              <button class="btn btn-primary btn-comprar">
-                <a style="color: #FFFFFF;" target="_blank" href="https://api.whatsapp.com/send?phone=5591982869577&text=">Comprar agora</a>
-                <img src="./src/icons/cards/carrinho_venda.svg" alt="">
-              </button>
-      
-              <div class="accordion card_content_info" id="accordionExample">
-                <div class="accordion-item card_content_info_item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapseTwo">
-                      Mostrar Informações
-                    </button>
-                  </h2>
-                  <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="list-group">
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/design_digital.svg" alt="">
-                          Design totalmente digital
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/comprovante_sms.svg" alt="comprovante">
-                          Imprime o comprovante
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/garantia.svg" alt="">
-                          3 anos de garantia
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/wifi.svg" alt="">
-                          Internet 4G ilimitada
-                        </li>
-                        <li class="list-group-item">
-                          <img src="./src/icons/cards/pagamento_aproximacao.svg" alt="">
-                          Aceita aproximação
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div id="bg" class="bg-menu hiddem-desktop"></div>
 
-    <!-- Bandeiras do Cartões -->
-    <section class="bandeiras-cartoes">
-          <h1>Aceite os principais meios de pagamento</h1>
-      
-          <div class="cartoes-grid-hiddem-pocket">
-              <div class="bandeira-content"><img src="src/cartoes/AleloIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/AmexIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/EloIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/CabalIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/VisaIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/DinersIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/HipercardIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/HiperIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/MasterIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/SodexoIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/GoogleIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/AppleIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/SansungIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/QRIcon.svg" alt=""></div>
-              <div class="bandeira-content"><img src="src/cartoes/PixIcon.svg" alt=""></div>
-          </div>
-      
-          <div class="cartoes-grid-hiddem-desktop">
-              <div class="linha3">
-                <div class="bandeira-content"><img src="src/cartoes/AleloIcon.svg" alt=""></div>
-                <div class="bandeira-content"><img src="src/cartoes/AmexIcon.svg" alt=""></div>
-                <div class="bandeira-content"><img src="src/cartoes/EloIcon.svg" alt=""></div>
-              </div>
-              <div class="linha4">
-                <div class="bandeira-content"><img src="src/cartoes/CabalIcon.svg" alt=""></div>
-                <div class="bandeira-content"><img src="src/cartoes/VisaIcon.svg" alt=""></div>
-                <div class="bandeira-content"><img src="src/cartoes/DinersIcon.svg" alt=""></div>
-                <div class="bandeira-content"><img src="src/cartoes/HipercardIcon.svg" alt=""></div>
-              </div>
-              <div class="linha3">
-                <div class="bandeira-content"><img src="src/cartoes/HiperIcon.svg" alt=""></div>
-                <div class="bandeira-content"><img src="src/cartoes/MasterIcon.svg" alt=""></div>
-                <div class="bandeira-content"><img src="src/cartoes/SodexoIcon.svg" alt=""></div>
-              </div>
-              <div class="linha4">
-                <div class="bandeira-content"><img src="src/cartoes/GoogleIcon.svg" alt=""></div>
-                <div class="bandeira-content"><img src="src/cartoes/AppleIcon.svg" alt=""></div>
-                <div class="bandeira-content"><img src="src/cartoes/SansungIcon.svg" alt=""></div>
-                <div class="bandeira-content"><img src="src/cartoes/QRIcon.svg" alt=""></div>
-              </div>
-              <div class="bandeira-content"><img src="src/cartoes/PixIcon.svg" alt=""></div>
-          </div>
-      
-          <h4>Ofereça pagamento parcelado em até 12 vezes.</h4>
-    </section>
+    <main class="banner">
+      <img
+        src="src/banner/Banner Mobile.png"
+        alt=""
+        class="banner-img hiddem-desktop"
+      />
+      <img
+        src="src/banner/Banner Desktop.png"
+        alt=""
+        class="banner-img hiddem-mobile"
+      />
+    </main>
 
-    <!-- Taxas -->
-    <section class="taxas-vendas bgcinza">
-      <h1>Receba o dinheiro de suas vendas na hora</h1>
-      <h4>Você escolhe quando ter o dinheiro disponível e qual taxa pagar por cada venda.</h4>
-
-      <div class="grid-taxa">
-        <div class="content-debito">
-          <span class="taxa">
-            <h2>Débito na Hora</h2>
-            <h1>1,99%</h1>
+    <main class="maquininhas">
+      <section class="grid-maquininhas">
+        <div class="maquininha point-nfc">
+          <span class="content-intro destaque">
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.4664 7.45528L14.1541 7.63323L13.1457 17.1969L11.458 17.0189L12.4664 7.45528ZM1.55471 11.1397L13.9924 1.07474C14.8553 0.376482 16.107 0.508465 16.8052 1.37133L19.3215 4.48076C18.4664 5.17272 18.3329 6.4385 19.0249 7.29359C19.7232 8.15646 20.9826 8.28215 21.8377 7.59018L24.354 10.6996C25.0522 11.5625 24.9202 12.8142 24.0574 13.5124L11.6197 23.5774C10.7646 24.2694 9.5051 24.1437 8.80685 23.2808L6.2906 20.1714C7.15347 19.4731 7.28545 18.2214 6.5872 17.3586C5.89523 16.5035 4.63723 16.3637 3.77436 17.062L1.25812 13.9525C0.559864 13.0897 0.699621 11.8317 1.55471 11.1397ZM2.81283 12.6944L4.41065 14.6689C5.82749 14.4486 7.24235 14.9888 8.14191 16.1004C9.04147 17.2121 9.28103 18.7163 8.76375 20.0482L10.3616 22.0227L22.7993 11.9577L21.2014 9.98324C19.7909 10.2114 18.3697 9.66333 17.4702 8.55171C16.5706 7.44009 16.3374 5.94367 16.8483 4.60394L15.2505 2.62945L2.81283 12.6944ZM8.34641 10.7893C8.99162 10.2672 9.93392 10.3665 10.456 11.0117C10.9782 11.6569 10.8788 12.5992 10.2336 13.1214C9.58839 13.6435 8.64609 13.5441 8.12397 12.8989C7.60185 12.2537 7.70121 11.3114 8.34641 10.7893ZM15.3785 11.5308C16.0237 11.0087 16.966 11.108 17.4881 11.7532C18.0102 12.3984 17.9109 13.3407 17.2657 13.8628C16.6205 14.385 15.6782 14.2856 15.1561 13.6404C14.6339 12.9952 14.7333 12.0529 15.3785 11.5308Z"
+                fill="white"
+              />
+            </svg>
+            A mais barata do Brasil
           </span>
-        </div>
-        <div class="content-credito">
-          <span class="taxa">
-            <h2>Crédito na Hora</h2>
-            <h1>4,98%</h1>
-          </span>
-          <span class="donw-credito">
-            <h5>Prazos com Crédito</h5>
-            <span class="content-taxa">
-              <span class="taxa-dias">
-                <h3>Em 14 dias</h3>
-                <h3><b>3,79%</b></h3>
-              </span>
-              <span class="taxa-dias">
-                <h3>Em 30 dias</h3>
-                <h3><b>3,03%</b></h3>
-              </span>
+          <div class="content-maquininha">
+            <span class="info-maquininha">
+              <img
+                src="src/images/Point mini NFC.png"
+                alt=""
+                class="maquininha-img"
+              />
+              <div class="titulo-maquininha-content">
+                <h3 class="titulo-maquininha">Point Mini NFC</h3>
+                <p class="subtitulo-maquininha">
+                  Aceite pagamentos por aproximação.
+                </p>
+              </div>
             </span>
-            
+            <a href="" class="btn-maquininha">
+              Comprar Agora
+              <svg
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.8 13.3C13.2243 13.3 13.6313 13.4686 13.9314 13.7686C14.2314 14.0687 14.4 14.4757 14.4 14.9C14.4 15.3243 14.2314 15.7313 13.9314 16.0314C13.6313 16.3314 13.2243 16.5 12.8 16.5C11.912 16.5 11.2 15.78 11.2 14.9C11.2 14.012 11.912 13.3 12.8 13.3ZM0 0.5H2.616L3.368 2.1H15.2C15.4122 2.1 15.6157 2.18429 15.7657 2.33431C15.9157 2.48434 16 2.68783 16 2.9C16 3.036 15.96 3.172 15.904 3.3L13.04 8.476C12.768 8.964 12.24 9.3 11.64 9.3H5.68L4.96 10.604L4.936 10.7C4.936 10.753 4.95707 10.8039 4.99458 10.8414C5.03209 10.8789 5.08296 10.9 5.136 10.9H14.4V12.5H4.8C3.912 12.5 3.2 11.78 3.2 10.9C3.2 10.62 3.272 10.356 3.392 10.132L4.48 8.172L1.6 2.1H0V0.5ZM4.8 13.3C5.22435 13.3 5.63131 13.4686 5.93137 13.7686C6.23143 14.0687 6.4 14.4757 6.4 14.9C6.4 15.3243 6.23143 15.7313 5.93137 16.0314C5.63131 16.3314 5.22435 16.5 4.8 16.5C3.912 16.5 3.2 15.78 3.2 14.9C3.2 14.012 3.912 13.3 4.8 13.3ZM12 7.7L14.224 3.7H4.112L6 7.7H12Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+            <div class="content-vantangens">
+              <h4 class="titulo-vantagens">
+                Vantagens de ter uma Point Mini NFC
+              </h4>
+              <div class="grid-vantagens">
+                <span class="vantagem">
+                  <svg
+                    width="9"
+                    height="17"
+                    viewBox="0 0 9 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.27273 11.0168H1.45455V3.74411H7.27273M7.27273 0.835022H1.45455C0.647273 0.835022 0 1.48229 0 2.28957V12.4714C0 12.8572 0.153246 13.2271 0.426026 13.4999C0.698807 13.7727 1.06878 13.9259 1.45455 13.9259H7.27273C7.6585 13.9259 8.02847 13.7727 8.30125 13.4999C8.57403 13.2271 8.72727 12.8572 8.72727 12.4714V2.28957C8.72727 1.48229 8.07273 0.835022 7.27273 0.835022ZM1.45455 16.835H7.27273V15.3805H1.45455V16.835Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Fácil de levar no Bolso
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.208 14.992L7.2 16L6 14.8L4.8 16L3.6 14.8L2.4 16L1.2 14.8L0 16V0L1.2 1.2L2.4 0L3.6 1.2L4.8 0L6 1.2L7.2 0L8.4 1.2L9.6 0L10.8 1.2L12 0L13.2 1.2L14.4 0V9.08C13.896 8.904 13.36 8.8 12.8 8.8V2.4H1.6V13.6H8C8 14.056 8.08 14.576 8.208 14.992ZM2.4 10.4V12H8.28C8.488 11.4 8.8 10.864 9.232 10.4H2.4ZM2.4 8.8H12V7.2H2.4V8.8ZM2.4 5.6H12V4H2.4V5.6ZM16 12.184L15.072 11.056L12.2 13.928L10.928 12.656L10 13.6L12.2 16"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Comprovante via SMS.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.81021 6.93061C3.8181 6.32688 4.06144 5.75009 4.48838 5.32315C4.91532 4.89621 5.49211 4.65287 6.09584 4.64498C6.69957 4.65287 7.27636 4.89621 7.7033 5.32315C8.13024 5.75009 8.37358 6.32688 8.38147 6.93061C8.37358 7.53434 8.13024 8.11112 7.7033 8.53806C7.27636 8.965 6.69957 9.20835 6.09584 9.21624C5.49211 9.20835 4.91532 8.965 4.48838 8.53806C4.06144 8.11112 3.8181 7.53434 3.81021 6.93061ZM6.09584 13.7875L9.14335 14.5494V12.2028C8.22428 12.7563 7.16858 13.0413 6.09584 13.0256C5.0231 13.0413 3.9674 12.7563 3.04833 12.2028V14.5494M6.09584 2.35935C5.49546 2.34839 4.89918 2.46034 4.34365 2.68832C3.78813 2.91629 3.2851 3.25547 2.86548 3.68501C2.4313 4.10509 2.08819 4.61001 1.85751 5.16837C1.62683 5.72672 1.5135 6.32658 1.52458 6.93061C1.51664 7.53081 1.63149 8.12631 1.86208 8.68051C2.09267 9.23471 2.43413 9.73592 2.86548 10.1533C3.28314 10.587 3.78529 10.9304 4.34091 11.1624C4.89653 11.3943 5.49381 11.5099 6.09584 11.5019C6.69787 11.5099 7.29515 11.3943 7.85077 11.1624C8.40639 10.9304 8.90854 10.587 9.3262 10.1533C9.75755 9.73592 10.099 9.23471 10.3296 8.68051C10.5602 8.12631 10.675 7.53081 10.6671 6.93061C10.6782 6.32658 10.5649 5.72672 10.3342 5.16837C10.1035 4.61001 9.76038 4.10509 9.3262 3.68501C8.90658 3.25547 8.40355 2.91629 7.84803 2.68832C7.2925 2.46034 6.69622 2.34839 6.09584 2.35935ZM12.1909 6.93061C12.1746 7.66192 12.0276 8.38441 11.7566 9.06386C11.5125 9.75521 11.1431 10.3957 10.6671 10.9533V16.835L6.09584 15.3113L1.52458 16.835V10.9533C0.538473 9.8459 -0.00412647 8.41343 0.00082512 6.93061C-0.0126029 6.13108 0.137991 5.33729 0.44331 4.59823C0.748629 3.85918 1.20219 3.19055 1.776 2.63362C2.33499 2.05467 3.00671 1.59643 3.74969 1.28718C4.49267 0.977932 5.29115 0.82424 6.09584 0.835593C6.90053 0.82424 7.69901 0.977932 8.44199 1.28718C9.18497 1.59643 9.85669 2.05467 10.4157 2.63362C10.9895 3.19055 11.4431 3.85918 11.7484 4.59823C12.0537 5.33729 12.2043 6.13108 12.1909 6.93061Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  3 anos de garantia.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="11"
+                    height="16"
+                    viewBox="0 0 11 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.904 11.432L6.4 12.936V9.928M6.4 3.064L7.904 4.568L6.4 6.064M10.168 4.568L5.6 0H4.8V6.064L1.128 2.4L0 3.528L4.472 8L0 12.464L1.128 13.6L4.8 9.928V16H5.6L10.168 11.432L6.728 8L10.168 4.568Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Conexão Bluetooth
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="13"
+                    viewBox="0 0 16 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.3636 11.3805C12.9673 11.3805 13.4545 10.8932 13.4545 10.2896C13.4545 9.68592 12.9673 9.19864 12.3636 9.19864C11.76 9.19864 11.2727 9.68592 11.2727 10.2896C11.2727 10.8932 11.76 11.3805 12.3636 11.3805ZM13.4545 4.83501H11.6364V6.65319H14.88L13.4545 4.83501ZM3.63636 11.3805C4.24 11.3805 4.72727 10.8932 4.72727 10.2896C4.72727 9.68592 4.24 9.19864 3.63636 9.19864C3.03273 9.19864 2.54545 9.68592 2.54545 10.2896C2.54545 10.8932 3.03273 11.3805 3.63636 11.3805ZM13.8182 3.7441L16 6.65319V10.2896H14.5455C14.5455 11.4968 13.5709 12.4714 12.3636 12.4714C11.1564 12.4714 10.1818 11.4968 10.1818 10.2896H5.81818C5.81818 11.4968 4.84364 12.4714 3.63636 12.4714C2.42909 12.4714 1.45455 11.4968 1.45455 10.2896H0V2.28955C0 1.48228 0.647273 0.835007 1.45455 0.835007H11.6364V3.7441H13.8182ZM1.45455 2.28955V8.83501H2.00727C2.40727 8.39137 2.98909 8.10773 3.63636 8.10773C4.28364 8.10773 4.86545 8.39137 5.26545 8.83501H10.1818V2.28955H1.45455ZM2.90909 5.56228L4 4.47137L5.09091 5.56228L7.63636 3.01682L8.72727 4.10773L5.09091 7.7441L2.90909 5.56228Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Frete grátis.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.6565 7.67054H1.52236C1.1186 7.67054 0.731387 7.83094 0.445889 8.11643C0.160391 8.40193 0 8.78915 0 9.1929V15.2823C0 15.6861 0.160391 16.0733 0.445889 16.3588C0.731387 16.6443 1.1186 16.8047 1.52236 16.8047H10.6565C11.0603 16.8047 11.4475 16.6443 11.733 16.3588C12.0185 16.0733 12.1789 15.6861 12.1789 15.2823V9.1929C12.1789 8.78915 12.0185 8.40193 11.733 8.11643C11.4475 7.83094 11.0603 7.67054 10.6565 7.67054ZM10.6565 15.2823H1.52236V12.2376H10.6565V15.2823ZM10.6565 10.7153H1.52236V9.1929H10.6565V10.7153ZM0.707897 3.04257L1.78116 4.11583C4.15604 1.73334 8.01522 1.73334 10.3977 4.11583L11.471 3.04257C8.50238 0.0587465 3.68411 0.0587465 0.707897 3.04257ZM2.86204 5.19671L3.9353 6.26997C5.12274 5.08253 7.04852 5.08253 8.24358 6.26997L9.31684 5.19671C7.53568 3.41555 4.6432 3.41555 2.86204 5.19671Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Aceita aproximação.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.6 16.1327L6.4 13.7327L7.328 12.8047L8.6 14.0767L11.472 11.2047L12.4 12.3327L8.6 16.1327ZM5.08 15.2047H1.6V4.0047H8V9.0847C8.504 8.9087 9.04 8.8047 9.6 8.8047V3.4687C9.6 2.8847 9.12 2.4047 8.536 2.4047H7.2V0.804703H2.4V2.4047H1.064C0.48 2.4047 0 2.8847 0 3.4687V15.7407C0 16.3247 0.48 16.8047 1.064 16.8047H6.032C5.6 16.3407 5.288 15.8047 5.08 15.2047Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  10 horas de bateria.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="maquininha point-chip">
+          <span class="content-intro"> A mais Prática! </span>
+          <div class="content-maquininha">
+            <span class="info-maquininha">
+              <img
+                src="src/images/Poinrt mini chip.svg"
+                alt=""
+                class="maquininha-img"
+              />
+              <div class="titulo-maquininha-content">
+                <h3 class="titulo-maquininha">Point Mini Chip</h3>
+                <p class="subtitulo-maquininha">Leve para qualquer lugar.</p>
+              </div>
+            </span>
+
+            <a href="" class="btn-maquininha">
+              Comprar Agora
+              <svg
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.8 13.3C13.2243 13.3 13.6313 13.4686 13.9314 13.7686C14.2314 14.0687 14.4 14.4757 14.4 14.9C14.4 15.3243 14.2314 15.7313 13.9314 16.0314C13.6313 16.3314 13.2243 16.5 12.8 16.5C11.912 16.5 11.2 15.78 11.2 14.9C11.2 14.012 11.912 13.3 12.8 13.3ZM0 0.5H2.616L3.368 2.1H15.2C15.4122 2.1 15.6157 2.18429 15.7657 2.33431C15.9157 2.48434 16 2.68783 16 2.9C16 3.036 15.96 3.172 15.904 3.3L13.04 8.476C12.768 8.964 12.24 9.3 11.64 9.3H5.68L4.96 10.604L4.936 10.7C4.936 10.753 4.95707 10.8039 4.99458 10.8414C5.03209 10.8789 5.08296 10.9 5.136 10.9H14.4V12.5H4.8C3.912 12.5 3.2 11.78 3.2 10.9C3.2 10.62 3.272 10.356 3.392 10.132L4.48 8.172L1.6 2.1H0V0.5ZM4.8 13.3C5.22435 13.3 5.63131 13.4686 5.93137 13.7686C6.23143 14.0687 6.4 14.4757 6.4 14.9C6.4 15.3243 6.23143 15.7313 5.93137 16.0314C5.63131 16.3314 5.22435 16.5 4.8 16.5C3.912 16.5 3.2 15.78 3.2 14.9C3.2 14.012 3.912 13.3 4.8 13.3ZM12 7.7L14.224 3.7H4.112L6 7.7H12Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+            <div class="content-vantangens">
+              <h4 class="titulo-vantagens">
+                Vantagens de ter uma Point Mini Chip
+              </h4>
+              <div class="grid-vantagens">
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.8691 3.6932C15.1855 5.00957 16 6.82775 16 8.83502C16 10.8423 15.1855 12.6605 13.8691 13.9768L12.8436 12.9514C13.8982 11.9041 14.5455 10.4496 14.5455 8.83502C14.5455 7.22775 13.8982 5.76593 12.8436 4.71866L13.8691 3.6932ZM11.8109 5.75139C12.6036 6.54411 13.0909 7.63502 13.0909 8.83502C13.0909 10.035 12.6036 11.1259 11.8109 11.9187L10.7855 10.8932C11.3091 10.3696 11.6364 9.64229 11.6364 8.83502C11.6364 8.02775 11.3091 7.30048 10.7855 6.77684L11.8109 5.75139ZM8.72727 7.38048C9.11304 7.38048 9.48301 7.53372 9.75579 7.8065C10.0286 8.07928 10.1818 8.44925 10.1818 8.83502C10.1818 9.22079 10.0286 9.59076 9.75579 9.86354C9.48301 10.1363 9.11304 10.2896 8.72727 10.2896C8.3415 10.2896 7.97153 10.1363 7.69875 9.86354C7.42597 9.59076 7.27273 9.22079 7.27273 8.83502C7.27273 8.44925 7.42597 8.07928 7.69875 7.8065C7.97153 7.53372 8.3415 7.38048 8.72727 7.38048ZM7.63636 0.835022C8.11858 0.835022 8.58104 1.02658 8.92201 1.36756C9.26299 1.70853 9.45455 2.17099 9.45455 2.6532V5.92593H8V3.01684H1.45455V13.9259H8V11.7441H9.45455V15.0168C9.45455 15.4991 9.26299 15.9615 8.92201 16.3025C8.58104 16.6435 8.11858 16.835 7.63636 16.835H1.81818C1.33597 16.835 0.873508 16.6435 0.532533 16.3025C0.191558 15.9615 0 15.4991 0 15.0168V2.6532C0 2.17099 0.191558 1.70853 0.532533 1.36756C0.873508 1.02658 1.33597 0.835022 1.81818 0.835022H7.63636Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Faz recarga de Celular.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.208 14.992L7.2 16L6 14.8L4.8 16L3.6 14.8L2.4 16L1.2 14.8L0 16V0L1.2 1.2L2.4 0L3.6 1.2L4.8 0L6 1.2L7.2 0L8.4 1.2L9.6 0L10.8 1.2L12 0L13.2 1.2L14.4 0V9.08C13.896 8.904 13.36 8.8 12.8 8.8V2.4H1.6V13.6H8C8 14.056 8.08 14.576 8.208 14.992ZM2.4 10.4V12H8.28C8.488 11.4 8.8 10.864 9.232 10.4H2.4ZM2.4 8.8H12V7.2H2.4V8.8ZM2.4 5.6H12V4H2.4V5.6ZM16 12.184L15.072 11.056L12.2 13.928L10.928 12.656L10 13.6L12.2 16"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Comprovante via SMS.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.81021 6.93061C3.8181 6.32688 4.06144 5.75009 4.48838 5.32315C4.91532 4.89621 5.49211 4.65287 6.09584 4.64498C6.69957 4.65287 7.27636 4.89621 7.7033 5.32315C8.13024 5.75009 8.37358 6.32688 8.38147 6.93061C8.37358 7.53434 8.13024 8.11112 7.7033 8.53806C7.27636 8.965 6.69957 9.20835 6.09584 9.21624C5.49211 9.20835 4.91532 8.965 4.48838 8.53806C4.06144 8.11112 3.8181 7.53434 3.81021 6.93061ZM6.09584 13.7875L9.14335 14.5494V12.2028C8.22428 12.7563 7.16858 13.0413 6.09584 13.0256C5.0231 13.0413 3.9674 12.7563 3.04833 12.2028V14.5494M6.09584 2.35935C5.49546 2.34839 4.89918 2.46034 4.34365 2.68832C3.78813 2.91629 3.2851 3.25547 2.86548 3.68501C2.4313 4.10509 2.08819 4.61001 1.85751 5.16837C1.62683 5.72672 1.5135 6.32658 1.52458 6.93061C1.51664 7.53081 1.63149 8.12631 1.86208 8.68051C2.09267 9.23471 2.43413 9.73592 2.86548 10.1533C3.28314 10.587 3.78529 10.9304 4.34091 11.1624C4.89653 11.3943 5.49381 11.5099 6.09584 11.5019C6.69787 11.5099 7.29515 11.3943 7.85077 11.1624C8.40639 10.9304 8.90854 10.587 9.3262 10.1533C9.75755 9.73592 10.099 9.23471 10.3296 8.68051C10.5602 8.12631 10.675 7.53081 10.6671 6.93061C10.6782 6.32658 10.5649 5.72672 10.3342 5.16837C10.1035 4.61001 9.76038 4.10509 9.3262 3.68501C8.90658 3.25547 8.40355 2.91629 7.84803 2.68832C7.2925 2.46034 6.69622 2.34839 6.09584 2.35935ZM12.1909 6.93061C12.1746 7.66192 12.0276 8.38441 11.7566 9.06386C11.5125 9.75521 11.1431 10.3957 10.6671 10.9533V16.835L6.09584 15.3113L1.52458 16.835V10.9533C0.538473 9.8459 -0.00412647 8.41343 0.00082512 6.93061C-0.0126029 6.13108 0.137991 5.33729 0.44331 4.59823C0.748629 3.85918 1.20219 3.19055 1.776 2.63362C2.33499 2.05467 3.00671 1.59643 3.74969 1.28718C4.49267 0.977932 5.29115 0.82424 6.09584 0.835593C6.90053 0.82424 7.69901 0.977932 8.44199 1.28718C9.18497 1.59643 9.85669 2.05467 10.4157 2.63362C10.9895 3.19055 11.4431 3.85918 11.7484 4.59823C12.0537 5.33729 12.2043 6.13108 12.1909 6.93061Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  3 anos de garantia.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="14"
+                    viewBox="0 0 16 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 13.8047L10.6667 10.2492C9.92593 9.6936 9 9.36026 8 9.36026C7 9.36026 6.07407 9.6936 5.33333 10.2492L8 13.8047ZM8 0.471375C5 0.471375 2.22963 1.46397 0 3.13804L1.33333 4.91582C3.18519 3.52323 5.4963 2.6936 8 2.6936C10.5037 2.6936 12.8148 3.52323 14.6667 4.91582L16 3.13804C13.7704 1.46397 11 0.471375 8 0.471375ZM8 4.91582C6 4.91582 4.15556 5.57508 2.66667 6.6936L4 8.47138C5.11111 7.63434 6.4963 7.13804 8 7.13804C9.5037 7.13804 10.8889 7.63434 12 8.47138L13.3333 6.6936C11.8444 5.57508 10 4.91582 8 4.91582Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Internet ilimitada e Wifi.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="13"
+                    viewBox="0 0 16 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.3636 11.3805C12.9673 11.3805 13.4545 10.8932 13.4545 10.2896C13.4545 9.68592 12.9673 9.19864 12.3636 9.19864C11.76 9.19864 11.2727 9.68592 11.2727 10.2896C11.2727 10.8932 11.76 11.3805 12.3636 11.3805ZM13.4545 4.83501H11.6364V6.65319H14.88L13.4545 4.83501ZM3.63636 11.3805C4.24 11.3805 4.72727 10.8932 4.72727 10.2896C4.72727 9.68592 4.24 9.19864 3.63636 9.19864C3.03273 9.19864 2.54545 9.68592 2.54545 10.2896C2.54545 10.8932 3.03273 11.3805 3.63636 11.3805ZM13.8182 3.7441L16 6.65319V10.2896H14.5455C14.5455 11.4968 13.5709 12.4714 12.3636 12.4714C11.1564 12.4714 10.1818 11.4968 10.1818 10.2896H5.81818C5.81818 11.4968 4.84364 12.4714 3.63636 12.4714C2.42909 12.4714 1.45455 11.4968 1.45455 10.2896H0V2.28955C0 1.48228 0.647273 0.835007 1.45455 0.835007H11.6364V3.7441H13.8182ZM1.45455 2.28955V8.83501H2.00727C2.40727 8.39137 2.98909 8.10773 3.63636 8.10773C4.28364 8.10773 4.86545 8.39137 5.26545 8.83501H10.1818V2.28955H1.45455ZM2.90909 5.56228L4 4.47137L5.09091 5.56228L7.63636 3.01682L8.72727 4.10773L5.09091 7.7441L2.90909 5.56228Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Frete grátis.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.6565 7.67054H1.52236C1.1186 7.67054 0.731387 7.83094 0.445889 8.11643C0.160391 8.40193 0 8.78915 0 9.1929V15.2823C0 15.6861 0.160391 16.0733 0.445889 16.3588C0.731387 16.6443 1.1186 16.8047 1.52236 16.8047H10.6565C11.0603 16.8047 11.4475 16.6443 11.733 16.3588C12.0185 16.0733 12.1789 15.6861 12.1789 15.2823V9.1929C12.1789 8.78915 12.0185 8.40193 11.733 8.11643C11.4475 7.83094 11.0603 7.67054 10.6565 7.67054ZM10.6565 15.2823H1.52236V12.2376H10.6565V15.2823ZM10.6565 10.7153H1.52236V9.1929H10.6565V10.7153ZM0.707897 3.04257L1.78116 4.11583C4.15604 1.73334 8.01522 1.73334 10.3977 4.11583L11.471 3.04257C8.50238 0.0587465 3.68411 0.0587465 0.707897 3.04257ZM2.86204 5.19671L3.9353 6.26997C5.12274 5.08253 7.04852 5.08253 8.24358 6.26997L9.31684 5.19671C7.53568 3.41555 4.6432 3.41555 2.86204 5.19671Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Aceita aproximação.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.6 16.1327L6.4 13.7327L7.328 12.8047L8.6 14.0767L11.472 11.2047L12.4 12.3327L8.6 16.1327ZM5.08 15.2047H1.6V4.0047H8V9.0847C8.504 8.9087 9.04 8.8047 9.6 8.8047V3.4687C9.6 2.8847 9.12 2.4047 8.536 2.4047H7.2V0.804703H2.4V2.4047H1.064C0.48 2.4047 0 2.8847 0 3.4687V15.7407C0 16.3247 0.48 16.8047 1.064 16.8047H6.032C5.6 16.3407 5.288 15.8047 5.08 15.2047Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  08 horas de bateria.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="maquininha point-pro2">
+          <span class="content-intro"> Queridinha da Galera! </span>
+          <div class="content-maquininha">
+            <span class="info-maquininha">
+              <img
+                src="src/images/Point Pro 2.svg"
+                alt=""
+                class="maquininha-img"
+              />
+              <div class="titulo-maquininha-content">
+                <h3 class="titulo-maquininha">Point Pro 2</h3>
+                <p class="subtitulo-maquininha">Imprima comprovantes.</p>
+              </div>
+            </span>
+            <a href="" class="btn-maquininha">
+              Comprar Agora
+              <svg
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.8 13.3C13.2243 13.3 13.6313 13.4686 13.9314 13.7686C14.2314 14.0687 14.4 14.4757 14.4 14.9C14.4 15.3243 14.2314 15.7313 13.9314 16.0314C13.6313 16.3314 13.2243 16.5 12.8 16.5C11.912 16.5 11.2 15.78 11.2 14.9C11.2 14.012 11.912 13.3 12.8 13.3ZM0 0.5H2.616L3.368 2.1H15.2C15.4122 2.1 15.6157 2.18429 15.7657 2.33431C15.9157 2.48434 16 2.68783 16 2.9C16 3.036 15.96 3.172 15.904 3.3L13.04 8.476C12.768 8.964 12.24 9.3 11.64 9.3H5.68L4.96 10.604L4.936 10.7C4.936 10.753 4.95707 10.8039 4.99458 10.8414C5.03209 10.8789 5.08296 10.9 5.136 10.9H14.4V12.5H4.8C3.912 12.5 3.2 11.78 3.2 10.9C3.2 10.62 3.272 10.356 3.392 10.132L4.48 8.172L1.6 2.1H0V0.5ZM4.8 13.3C5.22435 13.3 5.63131 13.4686 5.93137 13.7686C6.23143 14.0687 6.4 14.4757 6.4 14.9C6.4 15.3243 6.23143 15.7313 5.93137 16.0314C5.63131 16.3314 5.22435 16.5 4.8 16.5C3.912 16.5 3.2 15.78 3.2 14.9C3.2 14.012 3.912 13.3 4.8 13.3ZM12 7.7L14.224 3.7H4.112L6 7.7H12Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+            <div class="content-vantangens">
+              <h4 class="titulo-vantagens">Vantagens de ter uma Point Pro 2</h4>
+              <div class="grid-vantagens">
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.8691 3.6932C15.1855 5.00957 16 6.82775 16 8.83502C16 10.8423 15.1855 12.6605 13.8691 13.9768L12.8436 12.9514C13.8982 11.9041 14.5455 10.4496 14.5455 8.83502C14.5455 7.22775 13.8982 5.76593 12.8436 4.71866L13.8691 3.6932ZM11.8109 5.75139C12.6036 6.54411 13.0909 7.63502 13.0909 8.83502C13.0909 10.035 12.6036 11.1259 11.8109 11.9187L10.7855 10.8932C11.3091 10.3696 11.6364 9.64229 11.6364 8.83502C11.6364 8.02775 11.3091 7.30048 10.7855 6.77684L11.8109 5.75139ZM8.72727 7.38048C9.11304 7.38048 9.48301 7.53372 9.75579 7.8065C10.0286 8.07928 10.1818 8.44925 10.1818 8.83502C10.1818 9.22079 10.0286 9.59076 9.75579 9.86354C9.48301 10.1363 9.11304 10.2896 8.72727 10.2896C8.3415 10.2896 7.97153 10.1363 7.69875 9.86354C7.42597 9.59076 7.27273 9.22079 7.27273 8.83502C7.27273 8.44925 7.42597 8.07928 7.69875 7.8065C7.97153 7.53372 8.3415 7.38048 8.72727 7.38048ZM7.63636 0.835022C8.11858 0.835022 8.58104 1.02658 8.92201 1.36756C9.26299 1.70853 9.45455 2.17099 9.45455 2.6532V5.92593H8V3.01684H1.45455V13.9259H8V11.7441H9.45455V15.0168C9.45455 15.4991 9.26299 15.9615 8.92201 16.3025C8.58104 16.6435 8.11858 16.835 7.63636 16.835H1.81818C1.33597 16.835 0.873508 16.6435 0.532533 16.3025C0.191558 15.9615 0 15.4991 0 15.0168V2.6532C0 2.17099 0.191558 1.70853 0.532533 1.36756C0.873508 1.02658 1.33597 0.835022 1.81818 0.835022H7.63636Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Faz recarga de Celular.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.208 14.992L7.2 16L6 14.8L4.8 16L3.6 14.8L2.4 16L1.2 14.8L0 16V0L1.2 1.2L2.4 0L3.6 1.2L4.8 0L6 1.2L7.2 0L8.4 1.2L9.6 0L10.8 1.2L12 0L13.2 1.2L14.4 0V9.08C13.896 8.904 13.36 8.8 12.8 8.8V2.4H1.6V13.6H8C8 14.056 8.08 14.576 8.208 14.992ZM2.4 10.4V12H8.28C8.488 11.4 8.8 10.864 9.232 10.4H2.4ZM2.4 8.8H12V7.2H2.4V8.8ZM2.4 5.6H12V4H2.4V5.6ZM16 12.184L15.072 11.056L12.2 13.928L10.928 12.656L10 13.6L12.2 16"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Imprime Comprovante.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.81021 6.93061C3.8181 6.32688 4.06144 5.75009 4.48838 5.32315C4.91532 4.89621 5.49211 4.65287 6.09584 4.64498C6.69957 4.65287 7.27636 4.89621 7.7033 5.32315C8.13024 5.75009 8.37358 6.32688 8.38147 6.93061C8.37358 7.53434 8.13024 8.11112 7.7033 8.53806C7.27636 8.965 6.69957 9.20835 6.09584 9.21624C5.49211 9.20835 4.91532 8.965 4.48838 8.53806C4.06144 8.11112 3.8181 7.53434 3.81021 6.93061ZM6.09584 13.7875L9.14335 14.5494V12.2028C8.22428 12.7563 7.16858 13.0413 6.09584 13.0256C5.0231 13.0413 3.9674 12.7563 3.04833 12.2028V14.5494M6.09584 2.35935C5.49546 2.34839 4.89918 2.46034 4.34365 2.68832C3.78813 2.91629 3.2851 3.25547 2.86548 3.68501C2.4313 4.10509 2.08819 4.61001 1.85751 5.16837C1.62683 5.72672 1.5135 6.32658 1.52458 6.93061C1.51664 7.53081 1.63149 8.12631 1.86208 8.68051C2.09267 9.23471 2.43413 9.73592 2.86548 10.1533C3.28314 10.587 3.78529 10.9304 4.34091 11.1624C4.89653 11.3943 5.49381 11.5099 6.09584 11.5019C6.69787 11.5099 7.29515 11.3943 7.85077 11.1624C8.40639 10.9304 8.90854 10.587 9.3262 10.1533C9.75755 9.73592 10.099 9.23471 10.3296 8.68051C10.5602 8.12631 10.675 7.53081 10.6671 6.93061C10.6782 6.32658 10.5649 5.72672 10.3342 5.16837C10.1035 4.61001 9.76038 4.10509 9.3262 3.68501C8.90658 3.25547 8.40355 2.91629 7.84803 2.68832C7.2925 2.46034 6.69622 2.34839 6.09584 2.35935ZM12.1909 6.93061C12.1746 7.66192 12.0276 8.38441 11.7566 9.06386C11.5125 9.75521 11.1431 10.3957 10.6671 10.9533V16.835L6.09584 15.3113L1.52458 16.835V10.9533C0.538473 9.8459 -0.00412647 8.41343 0.00082512 6.93061C-0.0126029 6.13108 0.137991 5.33729 0.44331 4.59823C0.748629 3.85918 1.20219 3.19055 1.776 2.63362C2.33499 2.05467 3.00671 1.59643 3.74969 1.28718C4.49267 0.977932 5.29115 0.82424 6.09584 0.835593C6.90053 0.82424 7.69901 0.977932 8.44199 1.28718C9.18497 1.59643 9.85669 2.05467 10.4157 2.63362C10.9895 3.19055 11.4431 3.85918 11.7484 4.59823C12.0537 5.33729 12.2043 6.13108 12.1909 6.93061Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  3 anos de garantia.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="14"
+                    viewBox="0 0 16 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 13.8047L10.6667 10.2492C9.92593 9.6936 9 9.36026 8 9.36026C7 9.36026 6.07407 9.6936 5.33333 10.2492L8 13.8047ZM8 0.471375C5 0.471375 2.22963 1.46397 0 3.13804L1.33333 4.91582C3.18519 3.52323 5.4963 2.6936 8 2.6936C10.5037 2.6936 12.8148 3.52323 14.6667 4.91582L16 3.13804C13.7704 1.46397 11 0.471375 8 0.471375ZM8 4.91582C6 4.91582 4.15556 5.57508 2.66667 6.6936L4 8.47138C5.11111 7.63434 6.4963 7.13804 8 7.13804C9.5037 7.13804 10.8889 7.63434 12 8.47138L13.3333 6.6936C11.8444 5.57508 10 4.91582 8 4.91582Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Internet ilimitada e Wifi.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="13"
+                    viewBox="0 0 16 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.3636 11.3805C12.9673 11.3805 13.4545 10.8932 13.4545 10.2896C13.4545 9.68592 12.9673 9.19864 12.3636 9.19864C11.76 9.19864 11.2727 9.68592 11.2727 10.2896C11.2727 10.8932 11.76 11.3805 12.3636 11.3805ZM13.4545 4.83501H11.6364V6.65319H14.88L13.4545 4.83501ZM3.63636 11.3805C4.24 11.3805 4.72727 10.8932 4.72727 10.2896C4.72727 9.68592 4.24 9.19864 3.63636 9.19864C3.03273 9.19864 2.54545 9.68592 2.54545 10.2896C2.54545 10.8932 3.03273 11.3805 3.63636 11.3805ZM13.8182 3.7441L16 6.65319V10.2896H14.5455C14.5455 11.4968 13.5709 12.4714 12.3636 12.4714C11.1564 12.4714 10.1818 11.4968 10.1818 10.2896H5.81818C5.81818 11.4968 4.84364 12.4714 3.63636 12.4714C2.42909 12.4714 1.45455 11.4968 1.45455 10.2896H0V2.28955C0 1.48228 0.647273 0.835007 1.45455 0.835007H11.6364V3.7441H13.8182ZM1.45455 2.28955V8.83501H2.00727C2.40727 8.39137 2.98909 8.10773 3.63636 8.10773C4.28364 8.10773 4.86545 8.39137 5.26545 8.83501H10.1818V2.28955H1.45455ZM2.90909 5.56228L4 4.47137L5.09091 5.56228L7.63636 3.01682L8.72727 4.10773L5.09091 7.7441L2.90909 5.56228Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Frete grátis.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.6565 7.67054H1.52236C1.1186 7.67054 0.731387 7.83094 0.445889 8.11643C0.160391 8.40193 0 8.78915 0 9.1929V15.2823C0 15.6861 0.160391 16.0733 0.445889 16.3588C0.731387 16.6443 1.1186 16.8047 1.52236 16.8047H10.6565C11.0603 16.8047 11.4475 16.6443 11.733 16.3588C12.0185 16.0733 12.1789 15.6861 12.1789 15.2823V9.1929C12.1789 8.78915 12.0185 8.40193 11.733 8.11643C11.4475 7.83094 11.0603 7.67054 10.6565 7.67054ZM10.6565 15.2823H1.52236V12.2376H10.6565V15.2823ZM10.6565 10.7153H1.52236V9.1929H10.6565V10.7153ZM0.707897 3.04257L1.78116 4.11583C4.15604 1.73334 8.01522 1.73334 10.3977 4.11583L11.471 3.04257C8.50238 0.0587465 3.68411 0.0587465 0.707897 3.04257ZM2.86204 5.19671L3.9353 6.26997C5.12274 5.08253 7.04852 5.08253 8.24358 6.26997L9.31684 5.19671C7.53568 3.41555 4.6432 3.41555 2.86204 5.19671Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Aceita aproximação.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.6 16.1327L6.4 13.7327L7.328 12.8047L8.6 14.0767L11.472 11.2047L12.4 12.3327L8.6 16.1327ZM5.08 15.2047H1.6V4.0047H8V9.0847C8.504 8.9087 9.04 8.8047 9.6 8.8047V3.4687C9.6 2.8847 9.12 2.4047 8.536 2.4047H7.2V0.804703H2.4V2.4047H1.064C0.48 2.4047 0 2.8847 0 3.4687V15.7407C0 16.3247 0.48 16.8047 1.064 16.8047H6.032C5.6 16.3407 5.288 15.8047 5.08 15.2047Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  24 horas de bateria.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="maquininha point-smart">
+          <span class="content-intro destaque">
+            <svg
+              width="15"
+              height="19"
+              viewBox="0 0 15 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.6723 9.03551C12.4423 8.73551 12.1623 8.47551 11.9023 8.21551C11.2323 7.61551 10.4723 7.18551 9.83226 6.55551C8.34226 5.09551 8.01226 2.68551 8.96226 0.83551C8.01226 1.06551 7.18226 1.58551 6.47226 2.15551C3.88226 4.23551 2.86226 7.90551 4.08226 11.0555C4.12226 11.1555 4.16226 11.2555 4.16226 11.3855C4.16226 11.6055 4.01226 11.8055 3.81226 11.8855C3.58226 11.9855 3.34226 11.9255 3.15226 11.7655C3.09226 11.7155 3.05226 11.6655 3.01226 11.5955C1.88226 10.1655 1.70226 8.11551 2.46226 6.47551C0.792256 7.83551 -0.117743 10.1355 0.0122567 12.3055C0.0722567 12.8055 0.132257 13.3055 0.302257 13.8055C0.442257 14.4055 0.712257 15.0055 1.01226 15.5355C2.09226 17.2655 3.96226 18.5055 5.97226 18.7555C8.11226 19.0255 10.4023 18.6355 12.0423 17.1555C13.8723 15.4955 14.5123 12.8355 13.5723 10.5555L13.4423 10.2955C13.2323 9.83551 12.6723 9.03551 12.6723 9.03551ZM9.51226 15.3355C9.23226 15.5755 8.77226 15.8355 8.41226 15.9355C7.29226 16.3355 6.17226 15.7755 5.51226 15.1155C6.70226 14.8355 7.41226 13.9555 7.62226 13.0655C7.79226 12.2655 7.47226 11.6055 7.34226 10.8355C7.22226 10.0955 7.24226 9.46551 7.51226 8.77551C7.70226 9.15551 7.90226 9.53551 8.14226 9.83551C8.91226 10.8355 10.1223 11.2755 10.3823 12.6355C10.4223 12.7755 10.4423 12.9155 10.4423 13.0655C10.4723 13.8855 10.1123 14.7855 9.51226 15.3355Z"
+                fill="white"
+              />
+            </svg>
+            Mais Vendida!
+          </span>
+          <div class="content-maquininha">
+            <span class="info-maquininha">
+              <img
+                src="src/images/Point smart.svg"
+                alt=""
+                class="maquininha-img"
+              />
+              <div class="titulo-maquininha-content">
+                <h3 class="titulo-maquininha">Point Smart</h3>
+                <p class="subtitulo-maquininha">Internet grátis e Wi-fi.</p>
+              </div>
+            </span>
+            <a href="" class="btn-maquininha">
+              Comprar Agora
+              <svg
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.8 13.3C13.2243 13.3 13.6313 13.4686 13.9314 13.7686C14.2314 14.0687 14.4 14.4757 14.4 14.9C14.4 15.3243 14.2314 15.7313 13.9314 16.0314C13.6313 16.3314 13.2243 16.5 12.8 16.5C11.912 16.5 11.2 15.78 11.2 14.9C11.2 14.012 11.912 13.3 12.8 13.3ZM0 0.5H2.616L3.368 2.1H15.2C15.4122 2.1 15.6157 2.18429 15.7657 2.33431C15.9157 2.48434 16 2.68783 16 2.9C16 3.036 15.96 3.172 15.904 3.3L13.04 8.476C12.768 8.964 12.24 9.3 11.64 9.3H5.68L4.96 10.604L4.936 10.7C4.936 10.753 4.95707 10.8039 4.99458 10.8414C5.03209 10.8789 5.08296 10.9 5.136 10.9H14.4V12.5H4.8C3.912 12.5 3.2 11.78 3.2 10.9C3.2 10.62 3.272 10.356 3.392 10.132L4.48 8.172L1.6 2.1H0V0.5ZM4.8 13.3C5.22435 13.3 5.63131 13.4686 5.93137 13.7686C6.23143 14.0687 6.4 14.4757 6.4 14.9C6.4 15.3243 6.23143 15.7313 5.93137 16.0314C5.63131 16.3314 5.22435 16.5 4.8 16.5C3.912 16.5 3.2 15.78 3.2 14.9C3.2 14.012 3.912 13.3 4.8 13.3ZM12 7.7L14.224 3.7H4.112L6 7.7H12Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+            <div class="content-vantangens">
+              <h4 class="titulo-vantagens">Vantagens de ter uma Point Smart</h4>
+              <div class="grid-vantagens">
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.81818 2.18182L7.63636 6.18182L11.6364 8L7.63636 9.81818L5.81818 13.8182L4 9.81818L0 8L4 6.18182L5.81818 2.18182ZM5.81818 5.69455L5.09091 7.27273L3.51273 8L5.09091 8.72727L5.81818 10.3055L6.54545 8.72727L8.12364 8L6.54545 7.27273L5.81818 5.69455ZM13.0909 5.81818L12.1745 3.82545L10.1818 2.90909L12.1745 2L13.0909 0L14 2L16 2.90909L14 3.82545L13.0909 5.81818ZM13.0909 16L12.1745 14.0073L10.1818 13.0909L12.1745 12.1818L13.0909 10.1818L14 12.1818L16 13.0909L14 14.0073L13.0909 16Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Design Digital.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.208 14.992L7.2 16L6 14.8L4.8 16L3.6 14.8L2.4 16L1.2 14.8L0 16V0L1.2 1.2L2.4 0L3.6 1.2L4.8 0L6 1.2L7.2 0L8.4 1.2L9.6 0L10.8 1.2L12 0L13.2 1.2L14.4 0V9.08C13.896 8.904 13.36 8.8 12.8 8.8V2.4H1.6V13.6H8C8 14.056 8.08 14.576 8.208 14.992ZM2.4 10.4V12H8.28C8.488 11.4 8.8 10.864 9.232 10.4H2.4ZM2.4 8.8H12V7.2H2.4V8.8ZM2.4 5.6H12V4H2.4V5.6ZM16 12.184L15.072 11.056L12.2 13.928L10.928 12.656L10 13.6L12.2 16"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Imprime Comprovante.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.81021 6.93061C3.8181 6.32688 4.06144 5.75009 4.48838 5.32315C4.91532 4.89621 5.49211 4.65287 6.09584 4.64498C6.69957 4.65287 7.27636 4.89621 7.7033 5.32315C8.13024 5.75009 8.37358 6.32688 8.38147 6.93061C8.37358 7.53434 8.13024 8.11112 7.7033 8.53806C7.27636 8.965 6.69957 9.20835 6.09584 9.21624C5.49211 9.20835 4.91532 8.965 4.48838 8.53806C4.06144 8.11112 3.8181 7.53434 3.81021 6.93061ZM6.09584 13.7875L9.14335 14.5494V12.2028C8.22428 12.7563 7.16858 13.0413 6.09584 13.0256C5.0231 13.0413 3.9674 12.7563 3.04833 12.2028V14.5494M6.09584 2.35935C5.49546 2.34839 4.89918 2.46034 4.34365 2.68832C3.78813 2.91629 3.2851 3.25547 2.86548 3.68501C2.4313 4.10509 2.08819 4.61001 1.85751 5.16837C1.62683 5.72672 1.5135 6.32658 1.52458 6.93061C1.51664 7.53081 1.63149 8.12631 1.86208 8.68051C2.09267 9.23471 2.43413 9.73592 2.86548 10.1533C3.28314 10.587 3.78529 10.9304 4.34091 11.1624C4.89653 11.3943 5.49381 11.5099 6.09584 11.5019C6.69787 11.5099 7.29515 11.3943 7.85077 11.1624C8.40639 10.9304 8.90854 10.587 9.3262 10.1533C9.75755 9.73592 10.099 9.23471 10.3296 8.68051C10.5602 8.12631 10.675 7.53081 10.6671 6.93061C10.6782 6.32658 10.5649 5.72672 10.3342 5.16837C10.1035 4.61001 9.76038 4.10509 9.3262 3.68501C8.90658 3.25547 8.40355 2.91629 7.84803 2.68832C7.2925 2.46034 6.69622 2.34839 6.09584 2.35935ZM12.1909 6.93061C12.1746 7.66192 12.0276 8.38441 11.7566 9.06386C11.5125 9.75521 11.1431 10.3957 10.6671 10.9533V16.835L6.09584 15.3113L1.52458 16.835V10.9533C0.538473 9.8459 -0.00412647 8.41343 0.00082512 6.93061C-0.0126029 6.13108 0.137991 5.33729 0.44331 4.59823C0.748629 3.85918 1.20219 3.19055 1.776 2.63362C2.33499 2.05467 3.00671 1.59643 3.74969 1.28718C4.49267 0.977932 5.29115 0.82424 6.09584 0.835593C6.90053 0.82424 7.69901 0.977932 8.44199 1.28718C9.18497 1.59643 9.85669 2.05467 10.4157 2.63362C10.9895 3.19055 11.4431 3.85918 11.7484 4.59823C12.0537 5.33729 12.2043 6.13108 12.1909 6.93061Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  3 anos de garantia.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="14"
+                    viewBox="0 0 16 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 13.8047L10.6667 10.2492C9.92593 9.6936 9 9.36026 8 9.36026C7 9.36026 6.07407 9.6936 5.33333 10.2492L8 13.8047ZM8 0.471375C5 0.471375 2.22963 1.46397 0 3.13804L1.33333 4.91582C3.18519 3.52323 5.4963 2.6936 8 2.6936C10.5037 2.6936 12.8148 3.52323 14.6667 4.91582L16 3.13804C13.7704 1.46397 11 0.471375 8 0.471375ZM8 4.91582C6 4.91582 4.15556 5.57508 2.66667 6.6936L4 8.47138C5.11111 7.63434 6.4963 7.13804 8 7.13804C9.5037 7.13804 10.8889 7.63434 12 8.47138L13.3333 6.6936C11.8444 5.57508 10 4.91582 8 4.91582Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Internet 4G ilimitada.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="13"
+                    viewBox="0 0 16 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.3636 11.3805C12.9673 11.3805 13.4545 10.8932 13.4545 10.2896C13.4545 9.68592 12.9673 9.19864 12.3636 9.19864C11.76 9.19864 11.2727 9.68592 11.2727 10.2896C11.2727 10.8932 11.76 11.3805 12.3636 11.3805ZM13.4545 4.83501H11.6364V6.65319H14.88L13.4545 4.83501ZM3.63636 11.3805C4.24 11.3805 4.72727 10.8932 4.72727 10.2896C4.72727 9.68592 4.24 9.19864 3.63636 9.19864C3.03273 9.19864 2.54545 9.68592 2.54545 10.2896C2.54545 10.8932 3.03273 11.3805 3.63636 11.3805ZM13.8182 3.7441L16 6.65319V10.2896H14.5455C14.5455 11.4968 13.5709 12.4714 12.3636 12.4714C11.1564 12.4714 10.1818 11.4968 10.1818 10.2896H5.81818C5.81818 11.4968 4.84364 12.4714 3.63636 12.4714C2.42909 12.4714 1.45455 11.4968 1.45455 10.2896H0V2.28955C0 1.48228 0.647273 0.835007 1.45455 0.835007H11.6364V3.7441H13.8182ZM1.45455 2.28955V8.83501H2.00727C2.40727 8.39137 2.98909 8.10773 3.63636 8.10773C4.28364 8.10773 4.86545 8.39137 5.26545 8.83501H10.1818V2.28955H1.45455ZM2.90909 5.56228L4 4.47137L5.09091 5.56228L7.63636 3.01682L8.72727 4.10773L5.09091 7.7441L2.90909 5.56228Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Frete grátis.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.6565 7.67054H1.52236C1.1186 7.67054 0.731387 7.83094 0.445889 8.11643C0.160391 8.40193 0 8.78915 0 9.1929V15.2823C0 15.6861 0.160391 16.0733 0.445889 16.3588C0.731387 16.6443 1.1186 16.8047 1.52236 16.8047H10.6565C11.0603 16.8047 11.4475 16.6443 11.733 16.3588C12.0185 16.0733 12.1789 15.6861 12.1789 15.2823V9.1929C12.1789 8.78915 12.0185 8.40193 11.733 8.11643C11.4475 7.83094 11.0603 7.67054 10.6565 7.67054ZM10.6565 15.2823H1.52236V12.2376H10.6565V15.2823ZM10.6565 10.7153H1.52236V9.1929H10.6565V10.7153ZM0.707897 3.04257L1.78116 4.11583C4.15604 1.73334 8.01522 1.73334 10.3977 4.11583L11.471 3.04257C8.50238 0.0587465 3.68411 0.0587465 0.707897 3.04257ZM2.86204 5.19671L3.9353 6.26997C5.12274 5.08253 7.04852 5.08253 8.24358 6.26997L9.31684 5.19671C7.53568 3.41555 4.6432 3.41555 2.86204 5.19671Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Aceita aproximação.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.6 16.1327L6.4 13.7327L7.328 12.8047L8.6 14.0767L11.472 11.2047L12.4 12.3327L8.6 16.1327ZM5.08 15.2047H1.6V4.0047H8V9.0847C8.504 8.9087 9.04 8.8047 9.6 8.8047V3.4687C9.6 2.8847 9.12 2.4047 8.536 2.4047H7.2V0.804703H2.4V2.4047H1.064C0.48 2.4047 0 2.8847 0 3.4687V15.7407C0 16.3247 0.48 16.8047 1.064 16.8047H6.032C5.6 16.3407 5.288 15.8047 5.08 15.2047Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  72 horas de bateria.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="maquininha point-air">
+          <span class="content-intro"> Lançamento! </span>
+          <div class="content-maquininha">
+            <span class="info-maquininha">
+              <img
+                src="src/images/Point air.svg"
+                alt=""
+                class="maquininha-img"
+              />
+              <div class="titulo-maquininha-content">
+                <h3 class="titulo-maquininha">Point Air</h3>
+                <p class="subtitulo-maquininha">Internet grátis e Wi-fi.</p>
+              </div>
+            </span>
+            <a href="" class="btn-maquininha">
+              Comprar Agora
+              <svg
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.8 13.3C13.2243 13.3 13.6313 13.4686 13.9314 13.7686C14.2314 14.0687 14.4 14.4757 14.4 14.9C14.4 15.3243 14.2314 15.7313 13.9314 16.0314C13.6313 16.3314 13.2243 16.5 12.8 16.5C11.912 16.5 11.2 15.78 11.2 14.9C11.2 14.012 11.912 13.3 12.8 13.3ZM0 0.5H2.616L3.368 2.1H15.2C15.4122 2.1 15.6157 2.18429 15.7657 2.33431C15.9157 2.48434 16 2.68783 16 2.9C16 3.036 15.96 3.172 15.904 3.3L13.04 8.476C12.768 8.964 12.24 9.3 11.64 9.3H5.68L4.96 10.604L4.936 10.7C4.936 10.753 4.95707 10.8039 4.99458 10.8414C5.03209 10.8789 5.08296 10.9 5.136 10.9H14.4V12.5H4.8C3.912 12.5 3.2 11.78 3.2 10.9C3.2 10.62 3.272 10.356 3.392 10.132L4.48 8.172L1.6 2.1H0V0.5ZM4.8 13.3C5.22435 13.3 5.63131 13.4686 5.93137 13.7686C6.23143 14.0687 6.4 14.4757 6.4 14.9C6.4 15.3243 6.23143 15.7313 5.93137 16.0314C5.63131 16.3314 5.22435 16.5 4.8 16.5C3.912 16.5 3.2 15.78 3.2 14.9C3.2 14.012 3.912 13.3 4.8 13.3ZM12 7.7L14.224 3.7H4.112L6 7.7H12Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+            <div class="content-vantangens">
+              <h4 class="titulo-vantagens">Vantagens de ter uma Point Air</h4>
+              <div class="grid-vantagens">
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.81818 2.18182L7.63636 6.18182L11.6364 8L7.63636 9.81818L5.81818 13.8182L4 9.81818L0 8L4 6.18182L5.81818 2.18182ZM5.81818 5.69455L5.09091 7.27273L3.51273 8L5.09091 8.72727L5.81818 10.3055L6.54545 8.72727L8.12364 8L6.54545 7.27273L5.81818 5.69455ZM13.0909 5.81818L12.1745 3.82545L10.1818 2.90909L12.1745 2L13.0909 0L14 2L16 2.90909L14 3.82545L13.0909 5.81818ZM13.0909 16L12.1745 14.0073L10.1818 13.0909L12.1745 12.1818L13.0909 10.1818L14 12.1818L16 13.0909L14 14.0073L13.0909 16Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Design Digital.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.208 14.992L7.2 16L6 14.8L4.8 16L3.6 14.8L2.4 16L1.2 14.8L0 16V0L1.2 1.2L2.4 0L3.6 1.2L4.8 0L6 1.2L7.2 0L8.4 1.2L9.6 0L10.8 1.2L12 0L13.2 1.2L14.4 0V9.08C13.896 8.904 13.36 8.8 12.8 8.8V2.4H1.6V13.6H8C8 14.056 8.08 14.576 8.208 14.992ZM2.4 10.4V12H8.28C8.488 11.4 8.8 10.864 9.232 10.4H2.4ZM2.4 8.8H12V7.2H2.4V8.8ZM2.4 5.6H12V4H2.4V5.6ZM16 12.184L15.072 11.056L12.2 13.928L10.928 12.656L10 13.6L12.2 16"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Imprime Comprovante.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.81021 6.93061C3.8181 6.32688 4.06144 5.75009 4.48838 5.32315C4.91532 4.89621 5.49211 4.65287 6.09584 4.64498C6.69957 4.65287 7.27636 4.89621 7.7033 5.32315C8.13024 5.75009 8.37358 6.32688 8.38147 6.93061C8.37358 7.53434 8.13024 8.11112 7.7033 8.53806C7.27636 8.965 6.69957 9.20835 6.09584 9.21624C5.49211 9.20835 4.91532 8.965 4.48838 8.53806C4.06144 8.11112 3.8181 7.53434 3.81021 6.93061ZM6.09584 13.7875L9.14335 14.5494V12.2028C8.22428 12.7563 7.16858 13.0413 6.09584 13.0256C5.0231 13.0413 3.9674 12.7563 3.04833 12.2028V14.5494M6.09584 2.35935C5.49546 2.34839 4.89918 2.46034 4.34365 2.68832C3.78813 2.91629 3.2851 3.25547 2.86548 3.68501C2.4313 4.10509 2.08819 4.61001 1.85751 5.16837C1.62683 5.72672 1.5135 6.32658 1.52458 6.93061C1.51664 7.53081 1.63149 8.12631 1.86208 8.68051C2.09267 9.23471 2.43413 9.73592 2.86548 10.1533C3.28314 10.587 3.78529 10.9304 4.34091 11.1624C4.89653 11.3943 5.49381 11.5099 6.09584 11.5019C6.69787 11.5099 7.29515 11.3943 7.85077 11.1624C8.40639 10.9304 8.90854 10.587 9.3262 10.1533C9.75755 9.73592 10.099 9.23471 10.3296 8.68051C10.5602 8.12631 10.675 7.53081 10.6671 6.93061C10.6782 6.32658 10.5649 5.72672 10.3342 5.16837C10.1035 4.61001 9.76038 4.10509 9.3262 3.68501C8.90658 3.25547 8.40355 2.91629 7.84803 2.68832C7.2925 2.46034 6.69622 2.34839 6.09584 2.35935ZM12.1909 6.93061C12.1746 7.66192 12.0276 8.38441 11.7566 9.06386C11.5125 9.75521 11.1431 10.3957 10.6671 10.9533V16.835L6.09584 15.3113L1.52458 16.835V10.9533C0.538473 9.8459 -0.00412647 8.41343 0.00082512 6.93061C-0.0126029 6.13108 0.137991 5.33729 0.44331 4.59823C0.748629 3.85918 1.20219 3.19055 1.776 2.63362C2.33499 2.05467 3.00671 1.59643 3.74969 1.28718C4.49267 0.977932 5.29115 0.82424 6.09584 0.835593C6.90053 0.82424 7.69901 0.977932 8.44199 1.28718C9.18497 1.59643 9.85669 2.05467 10.4157 2.63362C10.9895 3.19055 11.4431 3.85918 11.7484 4.59823C12.0537 5.33729 12.2043 6.13108 12.1909 6.93061Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  3 anos de garantia.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="14"
+                    viewBox="0 0 16 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 13.8047L10.6667 10.2492C9.92593 9.6936 9 9.36026 8 9.36026C7 9.36026 6.07407 9.6936 5.33333 10.2492L8 13.8047ZM8 0.471375C5 0.471375 2.22963 1.46397 0 3.13804L1.33333 4.91582C3.18519 3.52323 5.4963 2.6936 8 2.6936C10.5037 2.6936 12.8148 3.52323 14.6667 4.91582L16 3.13804C13.7704 1.46397 11 0.471375 8 0.471375ZM8 4.91582C6 4.91582 4.15556 5.57508 2.66667 6.6936L4 8.47138C5.11111 7.63434 6.4963 7.13804 8 7.13804C9.5037 7.13804 10.8889 7.63434 12 8.47138L13.3333 6.6936C11.8444 5.57508 10 4.91582 8 4.91582Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Internet 4G ilimitada.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="16"
+                    height="13"
+                    viewBox="0 0 16 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.3636 11.3805C12.9673 11.3805 13.4545 10.8932 13.4545 10.2896C13.4545 9.68592 12.9673 9.19864 12.3636 9.19864C11.76 9.19864 11.2727 9.68592 11.2727 10.2896C11.2727 10.8932 11.76 11.3805 12.3636 11.3805ZM13.4545 4.83501H11.6364V6.65319H14.88L13.4545 4.83501ZM3.63636 11.3805C4.24 11.3805 4.72727 10.8932 4.72727 10.2896C4.72727 9.68592 4.24 9.19864 3.63636 9.19864C3.03273 9.19864 2.54545 9.68592 2.54545 10.2896C2.54545 10.8932 3.03273 11.3805 3.63636 11.3805ZM13.8182 3.7441L16 6.65319V10.2896H14.5455C14.5455 11.4968 13.5709 12.4714 12.3636 12.4714C11.1564 12.4714 10.1818 11.4968 10.1818 10.2896H5.81818C5.81818 11.4968 4.84364 12.4714 3.63636 12.4714C2.42909 12.4714 1.45455 11.4968 1.45455 10.2896H0V2.28955C0 1.48228 0.647273 0.835007 1.45455 0.835007H11.6364V3.7441H13.8182ZM1.45455 2.28955V8.83501H2.00727C2.40727 8.39137 2.98909 8.10773 3.63636 8.10773C4.28364 8.10773 4.86545 8.39137 5.26545 8.83501H10.1818V2.28955H1.45455ZM2.90909 5.56228L4 4.47137L5.09091 5.56228L7.63636 3.01682L8.72727 4.10773L5.09091 7.7441L2.90909 5.56228Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Frete grátis.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.6565 7.67054H1.52236C1.1186 7.67054 0.731387 7.83094 0.445889 8.11643C0.160391 8.40193 0 8.78915 0 9.1929V15.2823C0 15.6861 0.160391 16.0733 0.445889 16.3588C0.731387 16.6443 1.1186 16.8047 1.52236 16.8047H10.6565C11.0603 16.8047 11.4475 16.6443 11.733 16.3588C12.0185 16.0733 12.1789 15.6861 12.1789 15.2823V9.1929C12.1789 8.78915 12.0185 8.40193 11.733 8.11643C11.4475 7.83094 11.0603 7.67054 10.6565 7.67054ZM10.6565 15.2823H1.52236V12.2376H10.6565V15.2823ZM10.6565 10.7153H1.52236V9.1929H10.6565V10.7153ZM0.707897 3.04257L1.78116 4.11583C4.15604 1.73334 8.01522 1.73334 10.3977 4.11583L11.471 3.04257C8.50238 0.0587465 3.68411 0.0587465 0.707897 3.04257ZM2.86204 5.19671L3.9353 6.26997C5.12274 5.08253 7.04852 5.08253 8.24358 6.26997L9.31684 5.19671C7.53568 3.41555 4.6432 3.41555 2.86204 5.19671Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+                  Aceita aproximação.
+                </span>
+                <span class="vantagem">
+                  <svg
+                    width="11"
+                    height="17"
+                    viewBox="0 0 11 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.72727 2.25925H6.54545V3.71379H8.72727V15.3502H1.45455V3.71379H3.63636V2.25925H1.45455C1.06878 2.25925 0.698807 2.41249 0.426026 2.68527C0.153246 2.95805 0 3.32802 0 3.71379V15.3502C0 15.7359 0.153246 16.1059 0.426026 16.3787C0.698807 16.6515 1.06878 16.8047 1.45455 16.8047H8.72727C9.11304 16.8047 9.48301 16.6515 9.75579 16.3787C10.0286 16.1059 10.1818 15.7359 10.1818 15.3502V3.71379C10.1818 3.32802 10.0286 2.95805 9.75579 2.68527C9.48301 2.41249 9.11304 2.25925 8.72727 2.25925ZM5.81818 3.71379H4.36364V0.804703H5.81818V3.71379Z"
+                      fill="#4390C2"
+                    />
+                  </svg>
+
+                  Cordão Grátis.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main class="cartoes">
+      <div class="tittle-content">
+        <h1 class="tittle">Aceite os principais meios de pagamento!</h1>
+      </div>
+      <div class="content-cartoes hiddem-mobile">
+        <div class="grid-cartoes gc1">
+          <span class="cartao">
+            <img src="src/cartoes/AleloIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/AmexIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/AppleIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/CabalIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/DinersIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/EloIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/GoogleIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/HipercardIcon.svg" alt="" />
+          </span>
+        </div>
+        <div class="grid-cartoes gc2">
+          <span class="cartao">
+            <img src="src/cartoes/MasterIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/PixIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/QRIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/SansungIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/SodexoIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/HiperIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/VisaIcon.svg" alt="" />
+          </span>
         </div>
       </div>
-    </section>
+      <div class="content-cartoes hiddem-desktop">
+        <div class="grid-cartoes gc1">
+          <span class="cartao">
+            <img src="src/cartoes/AleloIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/AmexIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/AppleIcon.svg" alt="" />
+          </span>
+        </div>
+        <div class="grid-cartoes gc2">
+          <span class="cartao">
+            <img src="src/cartoes/CabalIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/DinersIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/EloIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/GoogleIcon.svg" alt="" />
+          </span>
+        </div>
+        <div class="grid-cartoes gc3">
+          <span class="cartao">
+            <img src="src/cartoes/HipercardIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/HiperIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/MasterIcon.svg" alt="" />
+          </span>
+        </div>
+        <div class="grid-cartoes gc4">
+          <span class="cartao">
+            <img src="src/cartoes/PixIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/QRIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/SansungIcon.svg" alt="" />
+          </span>
+          <span class="cartao">
+            <img src="src/cartoes/SodexoIcon.svg" alt="" />
+          </span>
+        </div>
+        <div class="grid-cartoes gc5">
+          <span class="cartao">
+            <img src="src/cartoes/VisaIcon.svg" alt="" />
+          </span>
+        </div>
+      </div>
+      <p class="subtittle">Ofereça pagamento parcelado em até 12 vezes.</p>
+    </main>
 
-    <!--Simular venda -->
-    <section class="simula-venda" id="simula-venda">
-      <h1>Simule sua venda Aqui</h1>
-      <div class="grid-formulario">
-        <div class="form-content col" >
-            <span>Quanto você quer cobrar?</span>
-            <div class="input-valor linha" style=" --bs-glutter-x: 0rem;">
-              <span class="cifrao">R$</span>
-                <input aria-label="AmountField" type="text" maxlength="10" inputmode="decimal" aria-describedby="AmountField-prefix" placeholder="0,00" id="valor-cobrar" onfocus="divSelect(this)" onblur="divSelect(this)" oninput="formatarValor()">
+    <main class="taxas">
+      <div class="tittle-content">
+        <h1 class="tittle">Receba o dinheiro de suas vendas na hora!</h1>
+        <p class="subtittle">
+          Você escolhe quando ter o dinheiro disponível e qual taxa pagar por
+          cada venda.
+        </p>
+      </div>
+      <div class="grid-taxas">
+        <div class="taxa-content">
+          <div class="taxa">
+            <h4 class="tittle-taxa">Débito na Hora</h4>
+            <h2 class="valor-taxa">1,99%</h2>
           </div>
         </div>
-      
-        <div class="display-valores">
-          <div class="content-valores">
-            <span>Se vender por </span>
-            <span class="vende"> R$ <b class="valor" id="valor-vende">0,00</b></span>
+        <div class="taxa-content">
+          <div class="taxa">
+            <h4 class="tittle-taxa">Crédito na Hora</h4>
+            <h2 class="valor-taxa">4,98%</h2>
           </div>
-          <div class="content-valores">
-            <span>Você recebe </span>
-            <span class="vende"> R$ <b class="valor" id="valor-recebe">0,00</b></span>
+          <div class="info-taxa">
+            <div class="info-taxa-grid">
+              <div class="info-taxa-content">
+                <span class="dias">Em 14 dias</span>
+                <span class="percentual">3,79%</span>
+              </div>
+              <div class="info-taxa-content">
+                <span class="dias">Em 30 dias</span>
+                <span class="percentual">3,03%</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="content-como-cobrar col">
-          <span>Com o que você quer cobrar?</span>
-          <select id="como-cobrar" class="linha" style=" --bs-glutter-x: .0rem;">
-            <option selected value="1" >Maquininhas Point e Point Tap</option>
+      </div>
+    </main>
+
+    <main class="simula-venda">
+      <div class="tittle-content">
+        <h1 class="tittle">Simule sua venda Aqui</h1>
+      </div>
+      <form class="grid-simula-vendas">
+        <div class="content-input">
+          <label for="valor-venda">Quanto você quer cobrar?</label>
+          <div class="input-valor">
+            <span class="cifrao">R$</span>
+            <input
+              aria-label="AmountField"
+              type="text"
+              maxlength="10"
+              inputmode="decimal"
+              aria-describedby="AmountField-prefix"
+              placeholder="0,00"
+              id="valor-cobrar"
+              class="valor-cobrar"
+              onfocus="divSelect(this)"
+              onblur="divSelect(this)"
+              oninput="formatarValor()"
+            />
+          </div>
+        </div>
+        <div class="valor-vendas">
+          <div class="content-valor">
+            <span class="tittle-valor">Se vender por</span>
+            <div class="valor">
+              R$
+              <span id="valorbruto">0,00</span>
+            </div>
+          </div>
+          <div class="content-valor">
+            <span class="tittle-valor">Você recebe</span>
+            <div class="valor">
+              R$
+              <span id="valorliquido">0,00</span>
+            </div>
+          </div>
+        </div>
+        <div class="content-select">
+          <label for="comocobrar">Com o que você quer cobrar?</label>
+          <select id="comocobrar" onchange="atualizaselect()" class="select-venda">
+            <option selected value="1">Maquininhas Point e Point Tap</option>
             <option value="2">Código QR</option>
           </select>
         </div>
-        <div class="content-tipo-pagamento col">
-          <span>Como seus cliente vão pagar?</span>
-          <select id="tipo-pagamento" class="linha" style=" --bs-glutter-x: .0rem;">
-            <option selected value="1" >Débito</option>
+        <div class="content-select">
+          <label for="tipopagamento">Como seus clientes vão pagar?</label>
+          <select id="tipopagamento" onchange="atualizaselect()" class="select-venda">
+            <option selected value="1">Débito</option>
             <option value="2">Crédito</option>
             <option value="3">Via Pix</option>
           </select>
         </div>
-        <div class="content-quando-recebe col">
-          <span>Quando você quer receber o dinheiro?</span>
-          <select id="quando-recebe" class="linha" style=" --bs-glutter-x: .0rem;">
-            <option selected value="1" >Na hora</option>
-            <option value="2">14 dias</option>
-            <option value="3">30 dias</option>
-          </select>
+        <div class="content-select">
+            <label for="quandorecebe">Quando você quer receber o dinheiro?</label>
+            <select id="quandorecebe" disabled onchange="atualizaselect()" class="select-venda">
+              <option selected value="1" >Na hora</option>
+              <option value="2">14 dias</option>
+              <option value="3">30 dias</option>
+            </select>
         </div>
-        <div class="content-tipo-parcelas col">
-          <span>Que tipo de pagamento você quer oferecer?</span>
-          <select id="tipo-parcelas" disabled class="linha" style=" --bs-glutter-x: .0rem;">
-            <option selected value="1" >À vista</option>
-            <option value="2">Parcelado Comprador</option>
-            <option value="3">Parcelado Vendedor</option>
-          </select>
+        <div class="content-select">
+            <label for="tipoparcelas">Que tipo de pagamento você quer oferecer?</label>
+            <select id="tipoparcelas" onchange="atualizaselect()" disabled class="select-venda">
+                <option selected value="1" >À vista</option>
+                <option value="2">Parcelado Comprador</option>
+                <option value="3">Parcelado Vendedor</option>
+            </select>
         </div>
-      </div>
-    </section>
+      </form>
+    </main>
 
-    <!--Footer-->
-    <footer id="footer">
-      <div class="content-footer">
-          <img src="src/LogoFooter.svg" alt="Logo Footer" class="logo-footer">
-          <div class="fale-conosco">
-              <a href="" class="telefone">
-                  <h1 class="telefone">(91) 98286-9577</h1>
-              </a>
-              <a href="" class="email">
-                  <h2>nortemaquinasdecartao@gmail.com</h2>
-              </a>
-
-              <div class="footer-donw hiddem-pocket">
-                  <h4>Siga nossas Redes Sociais</h4>
-                  <div class="redes-sociais">
-                      <a href="https://pt-br.facebook.com" target="_blank" class="content-redes face"><img src="src/redes-sociais/FaceV.svg" alt=""></a>
-                      <a href="https://www.instagram.com/nortemaquinasdecartao/" target="_blank" class="content-redes insta"><img src="src/redes-sociais/InstaV.svg" alt=""></a>
-                      <!-- <a href="https://twitter.com" target="_blank" class="content-redes twitter"><img src="src/redes-sociais/TwitterV.svg" alt=""></a>
-                         -->
-                  </div>
+    <footer class="footer">
+        <span class="logo-footer">
+            <img src="src/LogoFooter.svg" alt="" class="logo-footer-img">
+        </span>
+        <div class="content-footer">
+            <div class="contato">
+                <h2 class="fone">(91) 98286-9577</h2>
+                <h4 class="email">nortemaquinasdecartao@gmail.com</h4>
+            </div>
+            <div class="social-content">
+                <h4 class="tittle-social">Siga-nos nas Redes Socias</h4>
+                <div class="grid-social">
+                    <a class="social-link face"><svg width="14" height="27" viewBox="0 0 14 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.15906 26.7821C6.74235 27.2724 9.26783 26.7821 9.26783 26.7821V15.0649H13.083L13.8199 10.2107H9.26783V7.06377C9.26783 5.74141 9.90643 4.45252 11.9368 4.45252H14V0.318037C14 0.318037 12.1333 0 10.3485 0C6.59883 0 4.15906 2.30995 4.15906 6.51139V10.2107H0V15.0649H4.15906V26.7821Z" fill="white"/>
+                        </svg></a>
+                    <a class="social-link insta"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.88686 0.305664H13.9699C17.0491 0.305664 19.551 2.80755 19.551 5.8868V13.9698C19.551 15.45 18.963 16.8696 17.9163 17.9163C16.8697 18.9629 15.4501 19.5509 13.9699 19.5509H5.88686C2.80761 19.5509 0.305725 17.0491 0.305725 13.9698V5.8868C0.305725 4.40659 0.893736 2.98701 1.9404 1.94034C2.98707 0.893675 4.40665 0.305664 5.88686 0.305664ZM5.6944 2.23019C4.77565 2.23019 3.89453 2.59516 3.24488 3.24482C2.59523 3.89447 2.23025 4.77559 2.23025 5.69434V14.1623C2.23025 16.0772 3.7795 17.6264 5.6944 17.6264H14.1623C15.0811 17.6264 15.9622 17.2614 16.6119 16.6118C17.2615 15.9621 17.6265 15.081 17.6265 14.1623V5.69434C17.6265 3.77944 16.0772 2.23019 14.1623 2.23019H5.6944ZM14.9803 3.67359C15.2993 3.67359 15.6052 3.80032 15.8308 4.02589C16.0564 4.25146 16.1831 4.55741 16.1831 4.87642C16.1831 5.19543 16.0564 5.50137 15.8308 5.72695C15.6052 5.95252 15.2993 6.07925 14.9803 6.07925C14.6612 6.07925 14.3553 5.95252 14.1297 5.72695C13.9041 5.50137 13.7774 5.19543 13.7774 4.87642C13.7774 4.55741 13.9041 4.25146 14.1297 4.02589C14.3553 3.80032 14.6612 3.67359 14.9803 3.67359ZM9.92837 5.11699C11.2044 5.11699 12.4282 5.62389 13.3305 6.52619C14.2328 7.42849 14.7397 8.65226 14.7397 9.92831C14.7397 11.2043 14.2328 12.4281 13.3305 13.3304C12.4282 14.2327 11.2044 14.7396 9.92837 14.7396C8.65233 14.7396 7.42855 14.2327 6.52625 13.3304C5.62395 12.4281 5.11705 11.2043 5.11705 9.92831C5.11705 8.65226 5.62395 7.42849 6.52625 6.52619C7.42855 5.62389 8.65233 5.11699 9.92837 5.11699ZM9.92837 7.04151C9.16274 7.04151 8.42847 7.34566 7.8871 7.88704C7.34572 8.42841 7.04157 9.16268 7.04157 9.92831C7.04157 10.6939 7.34572 11.4282 7.8871 11.9696C8.42847 12.511 9.16274 12.8151 9.92837 12.8151C10.694 12.8151 11.4283 12.511 11.9696 11.9696C12.511 11.4282 12.8152 10.6939 12.8152 9.92831C12.8152 9.16268 12.511 8.42841 11.9696 7.88704C11.4283 7.34566 10.694 7.04151 9.92837 7.04151Z" fill="white"/>
+                        </svg>
+                        </a>
+                </div>
               </div>
-          </div>
-      </div>
-      <div class="copyright">copyright © <span id="DateCopy"></span> nortemaquininhas.com</div>
+        </div>
+    </footer>
+    <div class="copy">copyright © <span id="DateCopy"></span> nortemaquininhas.com</div>
   </footer>
   <script>
     data = new Date().getFullYear();
     document.getElementById("DateCopy").innerHTML = data;
   </script>
-</body>
+  </body>
 </html>
