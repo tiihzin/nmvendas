@@ -728,7 +728,11 @@ h2{
   padding: 1rem;
   border-radius: 0.6rem;
   font-size: 0.9rem;
-  border: solid var(--border-color) 0.1rem;
+  border: solid var(--border-color) .1rem;
+}
+
+.select-venda:disabled{
+  background-color: var(--bg-section-color);
 }
 
 .valor-vendas {
